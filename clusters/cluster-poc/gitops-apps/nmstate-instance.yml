@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nmstate-operator
+  name: nmstate-instance
   namespace: openshift-gitops
 spec:
   destination:
@@ -10,7 +10,7 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: HEAD
-      path: openshift/nmstate/operator/
+      path: openshift/nmstate/instance/
       #directory:
       #  recurse: true
       kustomize:
