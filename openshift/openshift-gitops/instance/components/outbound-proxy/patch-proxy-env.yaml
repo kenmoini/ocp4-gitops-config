@@ -1,0 +1,18 @@
+- op: add
+  path: /spec/repo/env/-
+  value:
+    name: HTTP_PROXY
+    value: http://192.168.42.31:3128
+
+- op: add
+  path: /spec/repo/env/-
+  value:
+    name: HTTPS_PROXY
+    value: http://192.168.42.31:3128
+
+- op: add
+  path: /spec/repo/env/-
+  value:
+    name: NO_PROXY
+    value: .cluster.local,.kemo.labs,.kemo.network,.svc,.svc.cluster.local,10.128.0.0/14,127.0.0.1,172.30.0.0/16,192.168.0.0/16,192.168.70.0/24,localhost
+
