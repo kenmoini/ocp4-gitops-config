@@ -1,0 +1,10 @@
+# This is used for SNO instances
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: openshift-etcd
+
+resources:
+  - rbac.yml
+  - cronjob.yml
