@@ -4,6 +4,8 @@ kind: Subscription
 metadata:
   name: kubernetes-nmstate-operator
   namespace: openshift-nmstate
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   channel: stable
   installPlanApproval: Automatic
