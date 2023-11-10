@@ -7,3 +7,4 @@ resources:
   - rbac.yml
   - argocd-AppProject.yml
   - argocd-AppOfApps.yml
+  - argocd-repo.yml
