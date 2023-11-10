@@ -3,7 +3,7 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   name: metallb-operator
-  namespace: openshift-nmstate
+  namespace: metallb-system
   annotations:
     argocd.argoproj.io/sync-wave: "0"
 spec:
