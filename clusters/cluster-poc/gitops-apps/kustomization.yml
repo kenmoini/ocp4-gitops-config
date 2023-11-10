@@ -9,3 +9,5 @@ resources:
   - metallb-operator.yml
   - metallb-instance.yml
   - openshift-virt-operator.yml
+  - external-secrets-operator.yml
+  - external-secrets-instance.yml
