@@ -8,4 +8,4 @@ spec:
   addresses:
     - 192.168.70.10-192.168.70.20
   autoAssign: false
-  protocol: layer2
+  #protocol: layer2
