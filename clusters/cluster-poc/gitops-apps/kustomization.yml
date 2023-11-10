@@ -7,3 +7,4 @@ resources:
   - nmstate-operator.yml
   - nmstate-instance.yml
   - metallb-operator.yml
+  - metallb-instance.yml

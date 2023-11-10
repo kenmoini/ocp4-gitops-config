@@ -1,0 +1,8 @@
+## MetalLB Operand
+## https://docs.openshift.com/container-platform/4.10/networking/metallb/metallb-operator-install.html
+---
+apiVersion: metallb.io/v1beta1
+kind: MetalLB
+metadata:
+  name: metallb
+  namespace: metallb-system
