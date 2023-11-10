@@ -1,0 +1,27 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vault
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: 'vault'
+    server: https://kubernetes.default.svc
+  project: local-cluster
+  sources:
+    - chart: vault
+      helm:
+        valueFiles:
+          - $values/clusters/cluster-poc/config/helm-values/vault.yml
+      repoURL: 'https://helm.releases.hashicorp.com/'
+      targetRevision: 0.25.0
+    - ref: values
+      repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
+      targetRevision: main
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
