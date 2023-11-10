@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+patches:
+  - path: patch-build-options.yaml
+    target:
+      kind: ArgoCD
+  - path: patch-init-containers.yaml
+    target:
+      kind: ArgoCD
+  - path: patch-kustomize-versions.yaml
+    target:
+      kind: ArgoCD
+  - path: patch-repo-env.yaml
+    target:
+      kind: ArgoCD
+  - path: patch-repo-volumes.yaml
+    target:
+      kind: ArgoCD

@@ -1,0 +1,25 @@
+---
+# This ArgoCD Application is used to load in all the other ArgoCD Applications that are used to manage the Hub of Hubs cluster
+# It will sync down the gitops-apps directory and all sub-directories, which are atomic Applications
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-of-apps-local-cluster
+  namespace: openshift-gitops
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+  source:
+    repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
+    targetRevision: HEAD
+    path: clusters/cluster-poc/gitops-apps
+    #directory:
+    #  recurse: true
+    kustomize:
+      version: v4.4.1
+  project: edge-cluster
+  syncPolicy:
+    automated:
+      prune: true
+      allowEmpty: true
+      selfHeal: false # overrides changes made on the cluster that drift from git state

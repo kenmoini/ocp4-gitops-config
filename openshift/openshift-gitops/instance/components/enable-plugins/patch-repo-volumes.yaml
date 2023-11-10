@@ -1,0 +1,11 @@
+- op: add
+  path: /spec/repo/volumeMounts/-
+  value:
+    mountPath: /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator
+    name: policy-generator
+
+- op: add
+  path: /spec/repo/volumes/-
+  value:
+    emptyDir: {}
+    name: policy-generator

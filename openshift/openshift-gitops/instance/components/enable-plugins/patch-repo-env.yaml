@@ -1,0 +1,5 @@
+- op: add
+  path: /spec/repo/env/-
+  value:
+    name: KUSTOMIZE_PLUGIN_HOME
+    value: /etc/kustomize/plugin

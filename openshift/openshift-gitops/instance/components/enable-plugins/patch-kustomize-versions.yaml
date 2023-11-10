@@ -1,0 +1,11 @@
+---
+apiVersion: argoproj.io/v1beta1
+kind: ArgoCD
+metadata:
+  name: openshift-gitops
+spec:
+  kustomizeVersions:
+    # you can get the updated version by running the `kustomize version` command in the argocd-server pod
+    # or from https://docs.openshift.com/gitops/1.10/release_notes/gitops-release-notes.html
+    - path: /usr/local/bin/kustomize
+      version: v5.1.0

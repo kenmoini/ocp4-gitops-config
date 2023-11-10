@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1beta1
+kind: ArgoCD
+metadata:
+  name: openshift-gitops
+spec:
+  nodePlacement:
+    tolerations:
+      - effect: NoSchedule
+        key: node-role.kubernetes.io/infra
+        operator: Exists
+      - effect: NoExecute
+        key: node-role.kubernetes.io/infra
+        operator: Exists

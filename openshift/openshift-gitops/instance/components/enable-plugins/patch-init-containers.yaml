@@ -1,0 +1,22 @@
+---
+kind: ArgoCD
+apiVersion: argoproj.io/v1beta1
+metadata:
+  name: openshift-gitops
+  namespace: openshift-gitops
+spec:
+  repo:
+    # Before the repo container starts, copy the PolicyGenerator binary into the ArgoCD container via the emptyDir Volume
+    initContainers:
+    - args:
+      - -c
+      - cp /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator/PolicyGenerator
+        /policy-generator/PolicyGenerator
+      command:
+      - /bin/bash
+      #image: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel8:v<version>
+      image: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel8:v2.8
+      name: policy-generator-install
+      volumeMounts:
+      - mountPath: /policy-generator
+        name: policy-generator
