@@ -8,3 +8,4 @@ resources:
   - nmstate-instance.yml
   - metallb-operator.yml
   - metallb-instance.yml
+  - openshift-virt-operator.yml
