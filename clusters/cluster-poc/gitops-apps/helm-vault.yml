@@ -15,7 +15,7 @@ spec:
         valueFiles:
           - $values/clusters/cluster-poc/config/helm-values/vault.yml
       repoURL: 'https://helm.releases.hashicorp.com/'
-      targetRevision: 0.25.0
+      targetRevision: 0.26.1
     - ref: values
       repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: main
