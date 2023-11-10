@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: etcd-defrag
+  name: nmstate-operator
   namespace: openshift-gitops
 spec:
   destination:
