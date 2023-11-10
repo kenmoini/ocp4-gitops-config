@@ -1,0 +1,9 @@
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: metallb
+  namespace: metallb-system
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec: {}

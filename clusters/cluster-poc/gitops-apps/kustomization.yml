@@ -6,3 +6,4 @@ resources:
   - etcd-defrag.yml
   - nmstate-operator.yml
   - nmstate-instance.yml
+  - metallb-operator.yml
