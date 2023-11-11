@@ -17,4 +17,4 @@ resources:
   - nmstate-operator.yml
   - nmstate-instance.yml
   - openshift-virt-operator.yml
-  - portworx-operator.yml
+  #- portworx-operator.yml
