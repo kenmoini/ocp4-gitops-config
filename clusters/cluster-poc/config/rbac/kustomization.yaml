@@ -4,3 +4,4 @@ kind: Kustomization
 
 resources:
   - crb-cluster-admins.yaml
+  - crb-cluster-readers.yaml

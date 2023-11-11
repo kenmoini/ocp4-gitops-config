@@ -4,7 +4,9 @@ kind: Component
 
 namespace: openshift-config
 
-# Provided user is myAdmin / s0m3P455
+# Provided users are:
+## myAdmin / s0m3P455
+## luser / notAGoodPassword
 
 resources:
   - htpasswd-secret.yaml
