@@ -10,7 +10,7 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: HEAD
-      path: openshift/portworx/operator/overlays/stable/
+      path: openshift/portworx-enterprise/operator/overlays/stable/
       #directory:
       #  recurse: true
       kustomize:
