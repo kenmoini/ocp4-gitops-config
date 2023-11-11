@@ -9,6 +9,7 @@ resources:
   - external-secrets-instance.yml
   #- helm-vault.yml
   - lvm-operator.yml
+  - lvm-instance.yml
   - metallb-operator.yml
   - metallb-instance.yml
   - mtv-operator.yml
