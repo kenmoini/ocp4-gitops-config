@@ -5,4 +5,4 @@ kind: Kustomization
 namespace: openshift-mtv
 
 resources:
-  - forkliftcontroller.yaml
+  - forklift-controller.yaml
