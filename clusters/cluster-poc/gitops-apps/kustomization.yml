@@ -11,6 +11,7 @@ resources:
   - metallb-operator.yml
   - metallb-instance.yml
   - mtv-operator.yml
+  - mtv-instance.yml
   - nmstate-operator.yml
   - nmstate-instance.yml
   - openshift-virt-operator.yml
