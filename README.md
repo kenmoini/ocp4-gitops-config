@@ -8,7 +8,7 @@ This repository has a set of GitOps-based assets for managing clusters.
 
 - etcd Defrag CronJob for Single Node OpenShift instances
 - External Secrets Operator Configuration
-- Helm installed ArgoCD Applications with Values from Git
+- Helm installed ArgoCD Applications with Values from Git (Hashicorp Vault)
 - MetalLB L2 Address Pools
 - OAuth Identity Providers
 - RBAC Definitions
@@ -66,3 +66,9 @@ oc apply -k clusters/<your-cluster-name>/gitops-setup/
 From there the rest of the cluster applications should provision things such as Operators and their instances as defined in the `clusters/<your-cluster-name>/gitops-apps/` folder.
 
 ### Cluster Configuration
+
+Your cluster will need some other configuration that is not provided by Operators, such as Identity Providers, RBAC, and Secrets.  These things may not need to be synced via ArgoCD but can easily be done by enabling the `cluster-config` Application in the `clusters/<your-cluster-name>/gitops-apps/kustomization.yml` file.
+
+Doing so will allow you to sync down things such as External Secrets Operator SecretStores, IdP configuration, RBAC, and additional configuration for Operators that may be tailored to each specific cluster.
+
+To expand upon that, you could also make some of the configuration into a Helm Chart that would provide easier templating based on some input such as cluster-name or the target of some services such as an external Vault that the External Secrets Operator would leverage.
