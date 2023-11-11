@@ -7,3 +7,5 @@ resources:
   - identity-providers/overlays/multi-auth/
   - rbac/
   - metallb/
+  - image-config/overlays/additional-trust-bundle/
+  - proxy-config/overlays/additional-trust-bundle/

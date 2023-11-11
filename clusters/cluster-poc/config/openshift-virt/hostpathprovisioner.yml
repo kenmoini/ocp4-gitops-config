@@ -3,6 +3,10 @@ kind: HostPathProvisioner
 metadata:
   name: hostpath-provisioner
 spec:
+  # needs extra sccs
+  #pathConfig:
+  #  useNamingPrefix: true
+  #  path: /var/hpvolumes
   storagePools:
     - pvcTemplate:
         accessModes:

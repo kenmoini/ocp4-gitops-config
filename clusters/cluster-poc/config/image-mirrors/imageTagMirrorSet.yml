@@ -1,0 +1,25 @@
+---
+apiVersion: config.openshift.io/v1
+kind: ImageTagMirrorSet
+metadata:
+    name: global
+spec:
+  imageTagMirrors:
+    - mirrors:
+        - disconn-harbor.d70.kemo.labs/quay-ptc/openshift-release-dev/ocp-release
+      source: quay.io/openshift-release-dev/ocp-release
+    - mirrors:
+        - disconn-harbor.d70.kemo.labs/quay-ptc/openshift-release-dev/ocp-v4.0-art-dev
+      source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
+    - mirrors:
+        - disconn-harbor.d70.kemo.labs/quay-ptc
+      source: quay.io
+    - mirrors:
+        - disconn-harbor.d70.kemo.labs/ghcr-ptc
+      source: ghcr.io
+    - mirrors:
+        - disconn-harbor.d70.kemo.labs/registry-redhat-io-ptc
+      source: registry.redhat.io
+    - mirrors:
+        - disconn-harbor.d70.kemo.labs/registry-connect-redhat-com-ptc
+      source: registry.connect.redhat.com
