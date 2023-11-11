@@ -4,7 +4,7 @@ kind: Kustomization
 
 resources:
   - etcd-defrag.yml
-  - helm-vault.yml
+  #- helm-vault.yml
   - nmstate-operator.yml
   - nmstate-instance.yml
   - metallb-operator.yml
