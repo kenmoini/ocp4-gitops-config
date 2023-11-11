@@ -1,0 +1,14 @@
+---
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+namespace: openshift-config
+
+resources:
+  - ca-cert-configmap.yaml
+  - external-secret-bind-pass.yaml
+
+patches:
+  - path: patch-oauth-ldap.yaml
+    target:
+      kind: OAuth

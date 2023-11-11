@@ -1,0 +1,15 @@
+---
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+namespace: openshift-config
+
+# Provided user is myAdmin / s0m3P455
+
+resources:
+  - htpasswd-secret.yaml
+
+patches:
+  - path: patch-oauth-htpasswd.yaml
+    target:
+      kind: OAuth
