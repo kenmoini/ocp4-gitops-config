@@ -31,7 +31,7 @@ This repository has a set of GitOps-based assets for managing clusters.
 
 First thing would be to create a [Fork of this Repo](https://github.com/kenmoini/ocp4-gitops-config/fork) and clone down to your terminal.
 
-Copy of the example cluster configuration for your intended cluster target:
+Copy the example cluster configuration for your intended cluster target:
 
 ```bash
 cp -R clusters/cluster-poc/ clusters/<your-cluster-name>
