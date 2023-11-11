@@ -21,6 +21,7 @@ spec:
           - key: ca-bundle.crt
             path: tls-ca-bundle.pem
         name: trusted-ca
+      name: trusted-ca
 
   extraVolumeMounts:
     - mountPath: /etc/pki/ca-trust/extracted/pem
