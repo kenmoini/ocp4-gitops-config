@@ -15,3 +15,14 @@ spec:
     limits:
       cpu: 100m
       memory: 256Mi
+  extraVolumes:
+    - configMap:
+        items:
+          - key: ca-bundle.crt
+            path: tls-ca-bundle.pem
+        name: trusted-ca
+
+  extraVolumeMounts:
+    - mountPath: /etc/pki/ca-trust/extracted/pem
+      name: trusted-ca
+      readOnly: true

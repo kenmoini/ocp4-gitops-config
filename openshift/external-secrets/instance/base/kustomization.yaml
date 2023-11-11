@@ -6,4 +6,5 @@ namespace: external-secrets
 
 resources:
   - namespace.yaml
+  - cluster-certs-configmap.yaml
   - default-operatorconfig.yaml
