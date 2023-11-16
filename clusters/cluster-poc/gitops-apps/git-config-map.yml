@@ -1,0 +1,7 @@
+--- # This CM is only used for Kustomize replacements
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: git-config
+data:
+  repoBase: https://github.com/kenmoini/ocp4-gitops-config
