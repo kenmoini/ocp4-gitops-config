@@ -32,3 +32,12 @@ spec:
     workloadUpdateMethods:
       - LiveMigrate
   uninstallStrategy: BlockUninstallIfWorkloadsExist
+  # Avoids OOMKilled on image importing: https://access.redhat.com/solutions/6988046
+  resourceRequirements:
+    storageWorkloads:
+      limits:
+        cpu: "500m"
+        memory: "2Gi"
+      requests:
+        cpu: "250m"
+        memory: "1Gi"
