@@ -8,13 +8,30 @@ metadata:
 spec:
   ipAddressPools:
     - v60-pool
+#---
+#kind: L2Advertisement
+#apiVersion: metallb.io/v1beta1
+#metadata:
+#  name: v60-hcp-pool-l2-adv
+#  annotations:
+#    argocd.argoproj.io/sync-wave: "15"
+#spec:
+#  ipAddressPools:
+#    - v60-hcp-auto-pool
 ---
 kind: L2Advertisement
 apiVersion: metallb.io/v1beta1
 metadata:
-  name: v60-hcp-pool-l2-adv
+  name: v60-hcp-pools-l2-adv
   annotations:
     argocd.argoproj.io/sync-wave: "15"
 spec:
   ipAddressPools:
-    - v60-hcp-auto-pool
+    - v60-hcp-sno-one-pool
+    - v60-hcp-sno-two-pool
+    - v60-hcp-sno-three-pool
+    - v60-hcp-sno-four-pool
+    - v60-hcp-sno-five-pool
+    - v60-hcp-sno-six-pool
+    - v60-hcp-sno-seven-pool
+    - v60-hcp-sno-eight-pool

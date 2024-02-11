@@ -2,7 +2,7 @@
 apiVersion: hypershift.openshift.io/v1beta1
 kind: NodePool
 metadata:
-  name: nodepool-sno-one-1
+  name: nodepool-sno-two-1
   namespace: sno-two
   annotations:
     argocd.argoproj.io/sync-wave: "25"
