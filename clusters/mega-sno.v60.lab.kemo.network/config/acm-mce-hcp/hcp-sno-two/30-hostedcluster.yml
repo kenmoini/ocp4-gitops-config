@@ -2,17 +2,17 @@
 apiVersion: hypershift.openshift.io/v1beta1
 kind: HostedCluster
 metadata:
-  name: sno-one
-  namespace: sno-one
+  name: sno-two
+  namespace: sno-two
   annotations:
     argocd.argoproj.io/sync-wave: "30"
 spec:
   release:
     image: quay.io/openshift-release-dev/ocp-release:4.14.11-multi
   pullSecret:
-    name: pullsecret-loe-rdu-sno-one
+    name: pullsecret-loe-rdu-sno-two
   sshKey:
-    name: sshkey-cluster-sno-one
+    name: sshkey-cluster-sno-two
   networking:
     clusterNetwork:
       - cidr: 10.132.0.0/14
@@ -34,7 +34,7 @@ spec:
     type: Agent
     agent:
       agentNamespace: 'loe-rdu-raza'
-  infraID: 'sno-one'
+  infraID: 'sno-two'
   dns:
     baseDomain: 'v60.lab.kemo.network'
   services:
