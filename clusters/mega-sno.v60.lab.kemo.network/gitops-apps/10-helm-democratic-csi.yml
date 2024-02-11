@@ -5,7 +5,7 @@ metadata:
   name: helm-democratic-csi
   namespace: openshift-gitops
   annotations:
-    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-wave: "10"
 spec:
   destination:
     namespace: 'vault'
@@ -17,13 +17,13 @@ spec:
         valueFiles:
           - $values/clusters/mega-sno.v60.lab.kemo.network/config/helm-values/democratic-csi.yml
       repoURL: 'https://democratic-csi.github.io/charts/'
-      targetRevision: 0.26.1
+      targetRevision: 0.14.5
     - ref: values
       repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: main
   syncPolicy:
     automated:
       allowEmpty: true
-      prune: true
+      #prune: false
     syncOptions:
       - CreateNamespace=true
