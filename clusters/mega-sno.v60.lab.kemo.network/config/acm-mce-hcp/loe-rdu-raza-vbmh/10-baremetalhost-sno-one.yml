@@ -10,6 +10,7 @@ metadata:
   namespace: loe-rdu-raza
   labels:
     infraenvs.agent-install.openshift.io: loe-rdu-raza
+    #agent-install.openshift.io/bmh: raza-sno-one
 spec:
   #automatedCleaningMode: disabled
   bmc:

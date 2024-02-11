@@ -1,22 +1,23 @@
----
 apiVersion: agent-install.openshift.io/v1beta1
 kind: NMStateConfig
 metadata:
-  name: loe-rdu-raza-sno-two
+  name: loe-rdu-raza-sno-one
   namespace: loe-rdu-raza
+  annotations:
+    argocd.argoproj.io/sync-wave: "7"
   labels:
-    agent-install.openshift.io/bmh: raza-sno-two
+    agent-install.openshift.io/bmh: raza-sno-one
     infraenvs.agent-install.openshift.io: loe-rdu-raza
 spec:
   config:
     interfaces:
       - ipv4:
           address:
-            - ip: 192.168.60.102
+            - ip: 192.168.60.101
               prefix-length: 23
           dhcp: false
           enabled: true
-        mac-address: '54:52:00:42:60:12'
+        mac-address: '54:52:00:42:60:11'
         name: eth0
         state: up
         type: ethernet
@@ -35,5 +36,5 @@ spec:
           next-hop-interface: eth0
           table-id: 254
   interfaces:
-    - macAddress: '54:52:00:42:60:12'
+    - macAddress: '54:52:00:42:60:11'
       name: eth0

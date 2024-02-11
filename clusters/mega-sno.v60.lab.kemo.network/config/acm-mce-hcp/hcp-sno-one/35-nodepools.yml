@@ -2,13 +2,13 @@
 apiVersion: hypershift.openshift.io/v1beta1
 kind: NodePool
 metadata:
-  name: nodepool-sno-three-1
-  namespace: sno-three
+  name: nodepool-sno-one-1
+  namespace: sno-one
   annotations:
-    argocd.argoproj.io/sync-wave: "25"
+    argocd.argoproj.io/sync-wave: "35"
 spec:
   arch: amd64 # amd64 | ppc64le | s390x | arm64
-  clusterName: sno-three
+  clusterName: sno-one
   replicas: 1
   management:
     autoRepair: false
@@ -18,6 +18,6 @@ spec:
     agent:
       agentLabelSelector:
         matchLabels:
-          agent-install.openshift.io/bmh: raza-sno-three
+          agent-install.openshift.io/bmh: raza-sno-one
   release:
     image: quay.io/openshift-release-dev/ocp-release:4.14.11-multi

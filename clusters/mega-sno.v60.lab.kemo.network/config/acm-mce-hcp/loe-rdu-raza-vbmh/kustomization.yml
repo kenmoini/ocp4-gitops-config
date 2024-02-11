@@ -7,9 +7,9 @@ resources:
   - 00-sushy-secret.yml
   - 02-rbac.yml
   - 05-infraenv.yml
+  - 07-nmstateconfig-sno-one.yml
+  - 07-nmstateconfig-sno-two.yml
+  - 07-nmstateconfig-sno-three.yml
   - 10-baremetalhost-sno-one.yml
   - 10-baremetalhost-sno-two.yml
   - 10-baremetalhost-sno-three.yml
-  - 10-nmstateconfig-sno-one.yml
-  - 10-nmstateconfig-sno-two.yml
-  - 10-nmstateconfig-sno-three.yml

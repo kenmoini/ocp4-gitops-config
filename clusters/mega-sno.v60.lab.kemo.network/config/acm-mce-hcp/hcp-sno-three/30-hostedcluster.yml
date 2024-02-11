@@ -9,7 +9,7 @@ metadata:
 spec:
   controllerAvailabilityPolicy: SingleReplica
   infrastructureAvailabilityPolicy: SingleReplica
-  olmCatalogPlacement: management # management or guest
+  olmCatalogPlacement: guest # management or guest
   release:
     image: quay.io/openshift-release-dev/ocp-release:4.14.11-multi
   pullSecret:
