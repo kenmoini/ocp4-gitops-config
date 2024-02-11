@@ -25,7 +25,3 @@ spec:
   #  httpProxy: http://192.168.42.31:3128
   #  httpsProxy: http://192.168.42.31:3128
   #  noProxy: 'localhost,.kemo.labs,.kemo.network'
-status:
-  agentLabelSelector:
-    matchLabels:
-      'agentclusterinstalls.extensions.hive.openshift.io/location': loe-rdu-dell-r730
