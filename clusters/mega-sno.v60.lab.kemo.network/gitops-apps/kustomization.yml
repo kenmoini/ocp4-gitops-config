@@ -11,6 +11,7 @@ resources:
   - 10-config-storageclasses.yml
   - 10-helm-democratic-csi.yml
   - 20-operator-acm.yml
+  - 20-operator-mce.yml
   #- cluster-config.yml
   #- external-secrets-operator.yml
   #- external-secrets-instance.yml
