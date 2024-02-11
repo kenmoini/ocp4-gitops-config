@@ -3,7 +3,7 @@ apiVersion: metal3.io/v1alpha1
 kind: BareMetalHost
 metadata:
   annotations:
-    bmac.agent-install.openshift.io/hostname: serenity.kemo.labs
+    bmac.agent-install.openshift.io/hostname: sno-one.v60.lab.kemo.network
     inspect.metal3.io: disabled
     argocd.argoproj.io/sync-wave: "10"
   name: raza-sno-one
