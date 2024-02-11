@@ -13,6 +13,12 @@ qemu-img create -f qcow2 /var/lib/libvirt/images/sno-two-data.qcow2 200G
 
 virsh define --file raza-sno-two.xml
 
+# Raza - sno-three
+qemu-img create -f qcow2 /var/lib/libvirt/images/sno-three-boot.qcow2 130G
+qemu-img create -f qcow2 /var/lib/libvirt/images/sno-three-data.qcow2 200G
+
+virsh define --file raza-sno-three.xml
+
 ## List UUIDs
 virsh list --uuid --name
 ```
@@ -20,4 +26,5 @@ virsh list --uuid --name
 ```bash
 rm /var/lib/libvirt/images/sno-one-boot.qcow2
 rm /var/lib/libvirt/images/sno-two-boot.qcow2
+rm /var/lib/libvirt/images/sno-three-boot.qcow2
 ```
