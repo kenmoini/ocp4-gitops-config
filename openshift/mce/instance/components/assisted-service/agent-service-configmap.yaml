@@ -9,6 +9,7 @@ data:
   LOG_LEVEL: "debug"
   AUTH_TYPE: "none"
   SKIP_CERT_VERIFICATION: "True"
+  ISO_IMAGE_TYPE: "full-iso"
   # HTTP_PROXY: "http://proxy.example.com:8080"
   # HTTPS_PROXY: "http://proxy.example.com:8080"
   # NO_PROXY: ""
