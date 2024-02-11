@@ -13,6 +13,7 @@ resources:
   - 20-operator-acm.yml
   - 20-operator-mce.yml
   - 30-instance-acm.yml
+  - 30-instance-mce.yml
   #- cluster-config.yml
   #- external-secrets-operator.yml
   #- external-secrets-instance.yml
