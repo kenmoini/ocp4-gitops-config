@@ -1,0 +1,6 @@
+
+- op: add
+  path: /spec/overrides/components/-
+  value:
+    name: managedserviceaccount
+    enabled: true

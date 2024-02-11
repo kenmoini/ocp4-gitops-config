@@ -7,5 +7,15 @@ bases:
 
 components:
   - ../../components/basic-availability
+  - ../../components/assisted-service
+  - ../../components/cluster-lifecycle
+  - ../../components/cluster-manager
+  - ../../components/cluster-proxy-addon
+  - ../../components/console-mce
+  - ../../components/discovery
+  - ../../components/hive
   - ../../components/hypershift
   - ../../components/hypershift-local-hosting
+  - ../../components/local-cluster
+  - ../../components/managedserviceaccount
+  - ../../components/server-foundation
