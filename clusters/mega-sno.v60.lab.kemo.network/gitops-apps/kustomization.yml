@@ -10,6 +10,7 @@ resources:
   - 10-lvm-instance.yml
   - 10-config-storageclasses.yml
   - 10-helm-democratic-csi.yml
+  - 20-operator-acm.yml
   #- cluster-config.yml
   #- external-secrets-operator.yml
   #- external-secrets-instance.yml

@@ -1,0 +1,38 @@
+---
+apiVersion: operator.open-cluster-management.io/v1
+kind: MultiClusterHub
+metadata:
+  name: multiclusterhub
+  namespace: open-cluster-management
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+spec:
+  availabilityConfig: Basic
+  enableClusterBackup: false
+  separateCertificateManagement: false
+  #disableUpdateClusterImageSets: false
+  #disableHubSelfManagement: true
+  #imagePullSecret: cluster-pull-secret
+  #customCAConfigmap: cluster-root-ca-bundle
+  overrides:
+    components:
+      - enabled: true
+        name: app-lifecycle
+      - enabled: false
+        name: search
+      - enabled: true
+        name: console
+      - enabled: false
+        name: insights
+      - enabled: true
+        name: grc
+      - enabled: true
+        name: cluster-lifecycle
+      - enabled: false
+        name: volsync
+      - enabled: false
+        name: multicluster-engine
+      - enabled: false
+        name: cluster-proxy-addon
+      - enabled: false
+        name: cluster-backup
