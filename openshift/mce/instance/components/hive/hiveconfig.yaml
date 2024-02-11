@@ -1,0 +1,27 @@
+---
+apiVersion: hive.openshift.io/v1
+kind: HiveConfig
+metadata:
+  creationTimestamp: null
+  name: hive
+  labels:
+    #installer.name: multiclusterhub
+    #installer.namespace: {{ acm_operator_namespace }}
+    backplaneconfig.name: multiclusterengine
+spec:
+  controllersConfig:
+    default:
+      replicas: 1
+  argoCDConfig:
+    enabled: true
+    namespace: openshift-gitops
+  #featureGates:
+  #  custom:
+  #    enabled:
+  #      - AlphaAgentInstallStrategy
+  #  featureSet: Custom
+  #logLevel: debug
+  #targetNamespace: hive
+
+  #additionalCertificateAuthoritiesSecretRef:
+  #  - name: custom_root_ca_name
