@@ -3,7 +3,6 @@ apiVersion: external-secrets.io/v1beta1
 metadata:
   name: vault
 spec:
-  controller: cluster
   provider:
     vault:
       auth:
