@@ -3,7 +3,7 @@ apiVersion: external-secrets.io/v1beta1
 metadata:
   name: vault
 spec:
-  controller: dev
+  controller: cluster
   provider:
     vault:
       auth:
@@ -12,6 +12,6 @@ spec:
           name: vault-token
           namespace: external-secrets
       # caBundle: ...
-      path: secret
+      path: kv
       server: 'http://vault.apps.k8s.kemo.labs'
       version: v2
