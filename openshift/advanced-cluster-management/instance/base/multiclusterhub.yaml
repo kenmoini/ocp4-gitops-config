@@ -26,15 +26,15 @@ spec:
         name: console
       - enabled: true
         name: grc
-      - enabled: true
+      - enabled: false
         name: insights
       - enabled: true
         name: multicluster-engine
-      - enabled: true
+      - enabled: false
         name: multicluster-observability
-      - enabled: true
+      - enabled: false
         name: search
-      - enabled: true
+      - enabled: false
         name: submariner-addon
       - enabled: false
         name: volsync
