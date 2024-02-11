@@ -11,7 +11,7 @@ metadata:
   labels:
     infraenvs.agent-install.openshift.io: loe-rdu-raza
 spec:
-  automatedCleaningMode: disabled
+  #automatedCleaningMode: disabled
   bmc:
     address: 'redfish-virtualmedia://sushy.kemo.labs/redfish/v1/Systems/bbea55d1-ff26-49d0-bf5e-20b9a0222b2d'
     credentialsName: bmc-serenity-raza-sushy
