@@ -1,4 +1,5 @@
 
 - op: replace
-  path: /spec/mirrorRegistryRef/name
-  value: mirror-registry-config
+  path: /spec/mirrorRegistryRef
+  value: 
+    name: mirror-registry-config
