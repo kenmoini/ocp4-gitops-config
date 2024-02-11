@@ -1,0 +1,34 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - git-config-map.yml
+  #- cluster-config.yml
+  - etcd-defrag.yml
+  #- external-secrets-operator.yml
+  #- external-secrets-instance.yml
+  #- helm-vault.yml
+  - lvm-operator.yml
+  - lvm-instance.yml
+  #- metallb-operator.yml
+  #- metallb-instance.yml
+  #- mtv-operator.yml
+  #- mtv-instance.yml
+  #- nmstate-operator.yml
+  #- nmstate-instance.yml
+  #- openshift-virt-operator.yml
+  #- portworx-operator.yml
+
+replacements:
+  - source:
+      kind: ConfigMap
+      name: git-config
+      fieldPath: data.repoBase
+    targets:
+      - select:
+          kind: Application
+          group: argoproj.io
+          labelSelector: has-git-repo-objects=true
+        fieldPaths:
+        - spec.sources.*.repoURL
