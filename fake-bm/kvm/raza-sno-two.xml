@@ -44,7 +44,7 @@
       <emulator>/usr/libexec/qemu-kvm</emulator>
       <disk type='file' device='disk'>
         <driver name='qemu' type='qcow2' cache='none' iothread="1" queues="8"/>
-        <source file='/var/lib/libvirt/images/sno-one-boot.qcow2' index='2'/>
+        <source file='/var/lib/libvirt/images/sno-two-boot.qcow2' index='2'/>
         <backingStore/>
         <target dev='vda' bus='virtio'/>
         <alias name='virtio-disk0'/>
@@ -52,7 +52,7 @@
       </disk>
       <disk type='file' device='disk'>
         <driver name='qemu' type='qcow2' cache='none' iothread="1" queues="8"/>
-        <source file='/var/lib/libvirt/images/sno-one-data.qcow2' index='3'/>
+        <source file='/var/lib/libvirt/images/sno-two-data.qcow2' index='3'/>
         <backingStore/>
         <target dev='vdb' bus='virtio'/>
         <alias name='virtio-disk1'/>
