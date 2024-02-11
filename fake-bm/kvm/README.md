@@ -16,3 +16,8 @@ virsh define --file raza-sno-two.xml
 ## List UUIDs
 virsh list --uuid --name
 ```
+
+```bash
+rm /var/lib/libvirt/images/sno-one-boot.qcow2
+rm /var/lib/libvirt/images/sno-two-boot.qcow2
+```

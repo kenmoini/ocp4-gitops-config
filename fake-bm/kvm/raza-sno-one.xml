@@ -1,5 +1,6 @@
 <domain type='kvm'>
     <name>sno-one</name>
+    <uuid>bbea55d1-ff26-49d0-bf5e-20b9a0222b2d</uuid>
     <genid/>
     <metadata>
         <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">

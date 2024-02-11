@@ -1,5 +1,6 @@
 <domain type='kvm'>
     <name>sno-two</name>
+    <uuid>9c051bf5-cbfd-4115-8ccc-07520899488b</uuid>
     <genid/>
     <metadata>
         <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
