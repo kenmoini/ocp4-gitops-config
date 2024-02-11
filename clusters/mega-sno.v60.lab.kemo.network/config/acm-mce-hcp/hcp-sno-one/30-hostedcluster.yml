@@ -21,7 +21,7 @@ spec:
       - cidr: 172.31.0.0/16
     networkType: OVNKubernetes
   additionalTrustBundle:
-    name: root-ca-bundle
+    name: user-ca-bundle
   #configuration:
   #  items:
   #  - apiVersion: config.openshift.io/v1
