@@ -6,6 +6,7 @@ resources:
   - 00-pull-secret.yml
   - 00-ssh-pubkey-secret.yml
   - 05-root-ca-bundle-configmap.yml
+  - 10-nmstateconfig.yml
   - 20-klusterletaddonconfig.yml
   - 20-managedcluster.yml
   - 25-nodepools.yml
