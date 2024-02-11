@@ -4,6 +4,7 @@ kind: Component
 
 resources:
   - agentserviceconfig.yaml
+  - agent-service-configmap.yaml
 
 patches:
   - path: patch-overrides.yaml
