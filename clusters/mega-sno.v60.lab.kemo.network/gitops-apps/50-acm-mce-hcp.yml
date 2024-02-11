@@ -14,7 +14,7 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: main
-      path: clusters/mega-sno.v60.lab.kemo.network/config/acm-mce-hcp/loe-rdu-dell-r730/
+      path: clusters/mega-sno.v60.lab.kemo.network/config/acm-mce-hcp/
       #directory:
       #  recurse: true
       kustomize:
