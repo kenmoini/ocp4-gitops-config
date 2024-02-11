@@ -8,24 +8,23 @@ metadata:
     infraenvs.agent-install.openshift.io: loe-rdu-raza
 spec:
   config:
-    networkConfig:
-      interfaces:
-        - ipv4:
-            address:
-              - ip: 192.168.60.101
-                prefix-length: 23
-            dhcp: false
-            enabled: true
-          mac-address: '54:52:00:42:60:11'
-          name: eth0
-          state: up
-          type: ethernet
-      routes:
-        config:
-          - destination: 0.0.0.0/0
-            next-hop-address: 192.168.60.1
-            next-hop-interface: eth0
-            table-id: 254
+    interfaces:
+      - ipv4:
+          address:
+            - ip: 192.168.60.101
+              prefix-length: 23
+          dhcp: false
+          enabled: true
+        mac-address: '54:52:00:42:60:11'
+        name: eth0
+        state: up
+        type: ethernet
+    routes:
+      config:
+        - destination: 0.0.0.0/0
+          next-hop-address: 192.168.60.1
+          next-hop-interface: eth0
+          table-id: 254
   interfaces:
     - macAddress: '54:52:00:42:60:11'
       name: eth0
