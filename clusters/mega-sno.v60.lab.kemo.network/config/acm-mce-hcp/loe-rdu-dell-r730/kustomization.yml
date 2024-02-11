@@ -7,4 +7,4 @@ resources:
   - 00-bmc-secret.yml
   - 02-rbac.yml
   - 05-infraenv.yml
-  - 10-baremetalhost.yml
+  #- 10-baremetalhost.yml
