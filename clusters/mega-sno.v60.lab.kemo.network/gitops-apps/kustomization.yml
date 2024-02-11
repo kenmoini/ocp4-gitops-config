@@ -7,6 +7,7 @@ resources:
   - 00-etcd-defrag.yml
   - 01-config-machineconfigs.yml
   - 05-lvm-operator.yml
+  - 05-operator-external-secrets.yml
   - 10-lvm-instance.yml
   - 10-config-storageclasses.yml
   - 10-helm-democratic-csi.yml
