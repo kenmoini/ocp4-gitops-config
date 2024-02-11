@@ -8,3 +8,4 @@ resources:
   - 02-rbac.yml
   - 05-infraenv.yml
   - 10-baremetalhost-sno-one.yml
+  - 10-baremetalhost-sno-two.yml
