@@ -20,3 +20,5 @@ rm -f /var/lib/libvirt/images/sno-three-data.qcow2
 
 virsh destroy sno-three
 virsh undefine --nvram sno-three
+
+fstrim -v -a
