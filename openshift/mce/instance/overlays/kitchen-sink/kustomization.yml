@@ -19,4 +19,3 @@ components:
   - ../../components/local-cluster
   - ../../components/managedserviceaccount
   - ../../components/server-foundation
-  - ../../components/mirror-registry

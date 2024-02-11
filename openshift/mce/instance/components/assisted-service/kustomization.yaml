@@ -5,9 +5,14 @@ kind: Component
 resources:
   - agentserviceconfig.yaml
   - agent-service-configmap.yaml
+  - mirror-registry-configmap.yaml
   - provisioning.yaml
 
 patches:
   - path: patch-overrides.yaml
     target:
       kind: MultiClusterEngine
+
+  - path: patch-mirrorregistryreg.yaml
+    target:
+      kind: AgentServiceConfig
