@@ -7,6 +7,9 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "30"
 spec:
+  controllerAvailabilityPolicy: SingleReplica
+  infrastructureAvailabilityPolicy: SingleReplica
+  olmCatalogPlacement: management # management or guest
   release:
     image: quay.io/openshift-release-dev/ocp-release:4.14.11-multi
   pullSecret:
@@ -15,10 +18,10 @@ spec:
     name: sshkey-cluster-sno-one
   networking:
     clusterNetwork:
-      - cidr: 10.132.0.0/14
+      - cidr: 10.136.0.0/14
         hostPrefix: 23
     serviceNetwork:
-      - cidr: 172.31.0.0/16
+      - cidr: 172.32.0.0/16
     networkType: OVNKubernetes
   additionalTrustBundle:
     name: user-ca-bundle
@@ -53,3 +56,10 @@ spec:
   - service: Ignition
     servicePublishingStrategy:
       type: Route
+  etcd:
+    managed:
+      storage:
+        persistentVolume:
+          size: 4Gi
+        type: PersistentVolume
+    managementType: Managed
