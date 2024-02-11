@@ -12,3 +12,4 @@ spec:
           name: thin-pool-1
           overprovisionRatio: 10
         name: vg1
+        default: false
