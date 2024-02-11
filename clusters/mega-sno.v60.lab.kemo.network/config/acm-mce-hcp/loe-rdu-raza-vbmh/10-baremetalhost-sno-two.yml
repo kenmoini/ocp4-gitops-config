@@ -13,7 +13,7 @@ metadata:
 spec:
   automatedCleaningMode: disabled
   bmc:
-    address: 'ipmi://192.168.42.40:8111/redfish/v1/Systems/9c051bf5-cbfd-4115-8ccc-07520899488b'
+    address: 'redfish-virtualmedia://sushy.kemo.labs/redfish/v1/Systems/9c051bf5-cbfd-4115-8ccc-07520899488b'
     credentialsName: bmc-serenity-raza-sushy
     disableCertificateVerification: true
   bootMACAddress: '54:52:00:42:60:12'
