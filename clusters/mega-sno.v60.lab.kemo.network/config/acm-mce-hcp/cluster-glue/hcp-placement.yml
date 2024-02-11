@@ -1,0 +1,11 @@
+---
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: Placement
+metadata:
+  labels:
+    app: rhacm-config
+  name: hcp-placement
+  namespace: rhacm-config
+spec:
+  clusterSets:
+    - hcp

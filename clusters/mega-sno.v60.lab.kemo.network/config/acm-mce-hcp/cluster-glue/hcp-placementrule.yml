@@ -1,0 +1,17 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: hcp-placement
+  namespace: rhacm-config
+placementRef:
+  name: hcp-placement
+  apiGroup: cluster.open-cluster-management.io
+  kind: Placement
+subjects:
+  - name: rh-pipelines-operator-installed
+    apiGroup: policy.open-cluster-management.io
+    kind: Policy
+  - name: rhacs-operator-installed
+    apiGroup: policy.open-cluster-management.io
+    kind: Policy
