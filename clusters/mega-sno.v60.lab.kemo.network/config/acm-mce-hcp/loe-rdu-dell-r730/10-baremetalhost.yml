@@ -5,6 +5,7 @@ metadata:
   annotations:
     bmac.agent-install.openshift.io/hostname: serenity.kemo.labs
     inspect.metal3.io: disabled
+    argocd.argoproj.io/sync-wave: "10"
   name: dell-r730
   namespace: loe-rdu-dell-r730
   labels:
