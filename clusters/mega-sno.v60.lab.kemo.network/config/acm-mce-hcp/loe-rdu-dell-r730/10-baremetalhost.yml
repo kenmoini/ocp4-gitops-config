@@ -1,0 +1,21 @@
+---
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  annotations:
+    bmac.agent-install.openshift.io/hostname: serenity.kemo.labs
+    inspect.metal3.io: disabled
+  name: dell-r730
+  namespace: loe-rdu-dell-r730
+  labels:
+    infraenvs.agent-install.openshift.io: loe-rdu-dell-r730
+spec:
+  automatedCleaningMode: disabled
+  bmc:
+    address: 'idrac-virtualmedia://192.168.46.44/redfish/v1/Systems/System.Embedded.1'
+    credentialsName: bmc-serenity-dell-r730
+    disableCertificateVerification: true
+  bootMACAddress: 'EC:F4:BB:C0:B9:C8'
+  customDeploy:
+    method: start_assisted_install
+  online: true
