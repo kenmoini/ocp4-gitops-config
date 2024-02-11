@@ -7,6 +7,7 @@ metadata:
     import.open-cluster-management.io/hosting-cluster-name: local-cluster 
     import.open-cluster-management.io/klusterlet-deploy-mode: Hosted
     open-cluster-management/created-via: hypershift
+    cluster.open-cluster-management.io/clusterset: 'hcp'
   labels:
     cloud: BareMetal
     vendor: OpenShift

@@ -2,6 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+  - ./cluster-glue/
   - ./loe-rdu-dell-r730/
   - ./loe-rdu-raza-vbmh/
   - ./hcp-sno-one/

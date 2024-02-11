@@ -6,6 +6,7 @@ metadata:
   namespace: sno-one
   annotations:
     argocd.argoproj.io/sync-wave: "30"
+    cluster.open-cluster-management.io/clusterset: 'hcp'
 spec:
   controllerAvailabilityPolicy: SingleReplica
   infrastructureAvailabilityPolicy: SingleReplica
