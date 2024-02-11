@@ -1,0 +1,8 @@
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: external-dns-operator
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+spec: {}

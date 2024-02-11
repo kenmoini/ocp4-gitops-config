@@ -1,0 +1,12 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: external-dns-operator
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
+spec:
+  channel: patch-me-in-overlay
+  installPlanApproval: Automatic
+  name: external-dns-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
