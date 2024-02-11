@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - ./loe-rdu-dell-r730/
   - ./loe-rdu-raza-vbmh/
+  - ./hcp-sno-one/

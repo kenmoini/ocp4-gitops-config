@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - 00-namespace.yml
+  - 00-pull-secret.yml
+  - 00-ssh-pubkey-secret.yml
+  - 20-klusterletaddonconfig.yml
+  - 20-managedcluster.yml
+  - 25-nodepools.yml
+  - 30-hostedcluster.yml

@@ -1,0 +1,24 @@
+---
+apiVersion: agent.open-cluster-management.io/v1
+kind: KlusterletAddonConfig
+metadata:
+  name: 'sno-one'
+  namespace: 'sno-one'
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"
+spec:
+  clusterName: 'sno-one'
+  clusterNamespace: 'sno-one'
+  clusterLabels:
+    cloud: BareMetal
+    vendor: OpenShift
+  applicationManager:
+    enabled: true
+  policyController:
+    enabled: true
+  searchCollector:
+    enabled: true
+  certPolicyController:
+    enabled: true
+  iamPolicyController:
+    enabled: true
