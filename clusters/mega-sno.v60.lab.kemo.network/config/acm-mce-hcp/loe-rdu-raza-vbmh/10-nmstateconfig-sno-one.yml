@@ -19,6 +19,14 @@ spec:
         name: eth0
         state: up
         type: ethernet
+    dns-resolver:
+      config:
+        search:
+        - kemo.labs
+        - kemo.network
+        server:
+        - 192.168.42.9
+        - 192.168.42.10
     routes:
       config:
         - destination: 0.0.0.0/0
