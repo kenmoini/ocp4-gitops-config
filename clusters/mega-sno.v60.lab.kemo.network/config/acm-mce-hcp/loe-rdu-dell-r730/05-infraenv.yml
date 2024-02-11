@@ -4,6 +4,8 @@ kind: InfraEnv
 metadata:
   name: loe-rdu-dell-r730
   namespace: loe-rdu-dell-r730
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
   labels:
     agentclusterinstalls.extensions.hive.openshift.io/location: loe-rdu-dell-r730
     networkType: static
