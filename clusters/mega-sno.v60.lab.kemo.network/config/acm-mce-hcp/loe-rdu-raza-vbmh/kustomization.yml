@@ -5,7 +5,6 @@ resources:
   - 00-namespace.yml
   - 00-pull-secret.yml
   - 00-sushy-secret.yml
-  - 00-bmc-secret.yml
   - 02-rbac.yml
   - 05-infraenv.yml
   - 10-baremetalhost-sno-one.yml
