@@ -6,3 +6,5 @@ namespace: external-secrets
 
 resources:
   - ../../base
+  - internal-vault-secret.yaml
+  - vault-clusterstore.yaml
