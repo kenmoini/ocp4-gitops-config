@@ -14,25 +14,29 @@ spec:
   #enableClusterBackup: false # deprecated
   #separateCertificateManagement: false # deprecated
   #customCAConfigmap: cluster-root-ca-bundle # deprecated
-  #overrides:
-  #  components:
-  #    - enabled: true
-  #      name: app-lifecycle
-  #    - enabled: false
-  #      name: search
-  #    - enabled: true
-  #      name: console
-  #    - enabled: false
-  #      name: insights
-  #    - enabled: true
-  #      name: grc
-  #    - enabled: true
-  #      name: cluster-lifecycle
-  #    - enabled: false
-  #      name: volsync
-  #    - enabled: true
-  #      name: multicluster-engine
-  #    - enabled: false
-  #      name: cluster-proxy-addon
-  #    - enabled: false
-  #      name: cluster-backup
+  overrides:
+    components:
+      - enabled: true
+        name: app-lifecycle
+      - enabled: true
+        name: cluster-lifecycle
+      - enabled: true
+        name: cluster-permission
+      - enabled: true
+        name: console
+      - enabled: true
+        name: grc
+      - enabled: true
+        name: insights
+      - enabled: true
+        name: multicluster-engine
+      - enabled: true
+        name: multicluster-observability
+      - enabled: true
+        name: search
+      - enabled: true
+        name: submariner-addon
+      - enabled: false
+        name: volsync
+      - enabled: false
+        name: cluster-backup
