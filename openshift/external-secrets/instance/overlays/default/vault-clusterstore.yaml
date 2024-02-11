@@ -8,7 +8,7 @@ spec:
     vault:
       auth:
         tokenSecretRef:
-          key: vault-token
+          key: token
           name: vault-token
           namespace: external-secrets
       # caBundle: ...
