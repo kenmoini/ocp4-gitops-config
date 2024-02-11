@@ -8,11 +8,11 @@ metadata:
     argocd.argoproj.io/sync-wave: "10"
 spec:
   destination:
-    namespace: 'vault'
+    namespace: 'democratic-csi'
     server: https://kubernetes.default.svc
   project: local-cluster
   sources:
-    - chart: vault
+    - chart: democratic-csi
       helm:
         valueFiles:
           - $values/clusters/mega-sno.v60.lab.kemo.network/config/helm-values/democratic-csi.yml
