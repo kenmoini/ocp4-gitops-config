@@ -1,0 +1,10 @@
+---
+kind: L2Advertisement
+apiVersion: metallb.io/v1beta1
+metadata:
+  name: v60-pool-l2-adv
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
+spec:
+  ipAddressPools:
+    - v60-pool

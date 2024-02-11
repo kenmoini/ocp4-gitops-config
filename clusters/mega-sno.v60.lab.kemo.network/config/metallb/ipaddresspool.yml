@@ -1,0 +1,12 @@
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: v60-pool
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
+spec:
+  addresses:
+    - 192.168.60.11-192.168.60.69
+  autoAssign: false
+  #protocol: layer2
