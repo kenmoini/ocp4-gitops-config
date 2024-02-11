@@ -1,0 +1,10 @@
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: root-ca-bundle
+  namespace: sno-one
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+  labels:
+    config.openshift.io/inject-trusted-cabundle: 'true'
