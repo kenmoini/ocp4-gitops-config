@@ -1,0 +1,29 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helm-democratic-csi
+  namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+spec:
+  destination:
+    namespace: 'vault'
+    server: https://kubernetes.default.svc
+  project: local-cluster
+  sources:
+    - chart: vault
+      helm:
+        valueFiles:
+          - $values/clusters/mega-sno.v60.lab.kemo.network/config/helm-values/democratic-csi.yml
+      repoURL: 'https://democratic-csi.github.io/charts/'
+      targetRevision: 0.26.1
+    - ref: values
+      repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
+      targetRevision: main
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true

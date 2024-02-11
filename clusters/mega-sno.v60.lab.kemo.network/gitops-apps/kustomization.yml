@@ -3,14 +3,16 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - git-config-map.yml
+  - 00-git-config-map.yml
+  - 00-etcd-defrag.yml
+  - 01-config-machineconfigs.yml
+  - 05-lvm-operator.yml
+  - 10-lvm-instance.yml
+  - 10-config-storageclasses.yml
   #- cluster-config.yml
-  - etcd-defrag.yml
   #- external-secrets-operator.yml
   #- external-secrets-instance.yml
   #- helm-vault.yml
-  - lvm-operator.yml
-  - lvm-instance.yml
   #- metallb-operator.yml
   #- metallb-instance.yml
   #- mtv-operator.yml
