@@ -1,0 +1,90 @@
+kind: CronJob
+apiVersion: batch/v1
+metadata:
+  name: disconn-fedora-image-cron
+  namespace: openshift-cnv
+  labels:
+    app.kubernetes.io/component: storage
+    app.kubernetes.io/managed-by: cdi-controller
+    app.kubernetes.io/part-of: hyperconverged-cluster
+    app.kubernetes.io/version: 4.13.4
+    cdi.kubevirt.io/dataImportCron: openshift-virtualization-os-images.fedora-image-cron
+spec:
+  #schedule: 21 5/12 * * *
+  schedule: '* * * * *'
+  concurrencyPolicy: Forbid
+  suspend: false
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+    spec:
+      backoffLimit: 2
+      template:
+        metadata:
+          creationTimestamp: null
+        spec:
+          restartPolicy: Never
+          serviceAccountName: cdi-cronjob
+          schedulerName: default-scheduler
+          terminationGracePeriodSeconds: 0
+          securityContext:
+            fsGroup: 107
+          containers:
+            - resources: {}
+              terminationMessagePath: /dev/termination-log
+              name: cdi-source-update-poller
+              command:
+                - /usr/bin/cdi-source-update-poller
+                - '-ns'
+                - openshift-virtualization-os-images
+                - '-cron'
+                - fedora-image-cron
+                - '-url'
+                - 'docker://disconn-harbor.d70.kemo.labs/quay-ptc/containerdisks/fedora:latest'
+              env:
+                - name: http_proxy
+                - name: https_proxy
+                - name: no_proxy
+              securityContext:
+                capabilities:
+                  drop:
+                    - ALL
+                runAsUser: 107
+                runAsNonRoot: true
+                allowPrivilegeEscalation: false
+                seccompProfile:
+                  type: RuntimeDefault
+              imagePullPolicy: IfNotPresent
+              volumeMounts:
+                - name: cdi-proxy-cert-vol
+                  mountPath: /proxycerts/
+                - mountPath: /etc/pki/ca-trust/extracted/pem
+                  name: trusted-ca
+                  readOnly: true
+                - mountPath: /home/virt-cdi-importer/.docker/
+                  name: cluster-pull-secret
+                  readOnly: true
+              terminationMessagePolicy: File
+              image: >-
+                registry.redhat.io/container-native-virtualization/virt-cdi-importer-rhel9@sha256:7fea51d6493508b8b6dbce36e47a4b9db36193c82e82b6e593aaa249ebe0c742
+          serviceAccount: cdi-cronjob
+          volumes:
+            - name: cdi-proxy-cert-vol
+              configMap:
+                name: additional-trust-bundle
+                defaultMode: 420
+            - configMap:
+                items:
+                  - key: ca-bundle.crt
+                    path: tls-ca-bundle.pem
+                name: trusted-ca
+              name: trusted-ca
+            - secret:
+                items:
+                  - key: .dockerconfigjson
+                    path: config.json
+              name: cluster-pull-secret
+          dnsPolicy: ClusterFirst
+      ttlSecondsAfterFinished: 10
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
