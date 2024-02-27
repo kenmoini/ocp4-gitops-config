@@ -5,7 +5,7 @@ metadata:
   name: lvms-vg1-immediate
   annotations:
     description: Provides RWO and RWOP Filesystem & Block volumes
-    storageclass.kubernetes.io/is-default-class: 'true'
+    storageclass.kubernetes.io/is-default-class: 'false'
 provisioner: topolvm.io
 parameters:
   csi.storage.k8s.io/fstype: xfs
