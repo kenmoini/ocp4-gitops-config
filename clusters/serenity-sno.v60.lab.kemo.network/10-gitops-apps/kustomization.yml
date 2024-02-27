@@ -17,6 +17,7 @@ resources:
   - 05-operator-openshift-virt.yml
   - 10-instance-lvmo.yml
   - 10-instance-metallb.yml
+  - 20-instance-mtv.yml
   - 20-instance-openshift-virt.yml
   #- 10-config-storageclasses.yml
   #- 10-helm-democratic-csi.yml
