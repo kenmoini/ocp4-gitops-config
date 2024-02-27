@@ -8,12 +8,12 @@ resources:
   - 00-etcd-defrag.yml
   - 01-config-machineconfigs.yml
   - 05-operator-lvm.yml
-  #- 05-operator-pipelines.yml
-  #- 05-operator-metallb.yml
-  #- 05-operator-quay.yml
-  #- 05-operator-external-secrets.yml
-  #- 05-operator-external-dns.yml
-  #- 10-lvm-instance.yml
+  - 05-operator-pipelines.yml
+  - 05-operator-metallb.yml
+  - 05-operator-quay.yml
+  - 05-operator-external-secrets.yml
+  - 05-operator-external-dns.yml
+  #- 10-instance-lvm.yml
   #- 10-instance-metallb.yml
   #- 10-config-storageclasses.yml
   #- 10-helm-democratic-csi.yml
