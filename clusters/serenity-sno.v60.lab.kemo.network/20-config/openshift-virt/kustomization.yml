@@ -4,5 +4,6 @@ kind: Kustomization
 
 resources:
   - hyperconverged-instance.yml
+  - storageprofile.yml
 
 namespace: openshift-cnv
