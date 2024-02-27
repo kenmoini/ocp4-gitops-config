@@ -15,6 +15,7 @@ resources:
   - 05-operator-external-dns.yml
   - 05-operator-mtv.yml
   - 05-operator-openshift-virt.yml
+  - 10-helm-democratic-csi.yml
   - 10-instance-lvmo.yml
   - 10-instance-metallb.yml
   - 20-instance-mtv.yml
