@@ -26,17 +26,7 @@ resources:
   #- 30-instance-mce.yml
   #- 50-acm-mce-hcp.yml
   #- cluster-config.yml
-  #- external-secrets-operator.yml
-  #- external-secrets-instance.yml
-  #- helm-vault.yml
-  #- metallb-operator.yml
-  #- metallb-instance.yml
-  #- mtv-operator.yml
-  #- mtv-instance.yml
-  #- nmstate-operator.yml
-  #- nmstate-instance.yml
   #- openshift-virt-operator.yml
-  #- portworx-operator.yml
 
 replacements:
   - source:
