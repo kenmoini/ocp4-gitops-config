@@ -14,7 +14,7 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: HEAD
-      path: openshift/ocp-virt/overlays/emulation
+      path: openshift/ocp-virt/overlays/default/
       #directory:
       #  recurse: true
       kustomize:
