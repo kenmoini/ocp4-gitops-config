@@ -1,0 +1,41 @@
+---
+apiVersion: agent-install.openshift.io/v1beta1
+kind: NMStateConfig
+metadata:
+  name: loe-rdu-raza-sno-two
+  namespace: loe-rdu-raza
+  annotations:
+    argocd.argoproj.io/sync-wave: "7"
+  labels:
+    agent-install.openshift.io/bmh: raza-sno-two
+    infraenvs.agent-install.openshift.io: loe-rdu-raza
+spec:
+  config:
+    interfaces:
+      - ipv4:
+          address:
+            - ip: 192.168.60.102
+              prefix-length: 23
+          dhcp: false
+          enabled: true
+        mac-address: '54:52:00:42:60:12'
+        name: eth0
+        state: up
+        type: ethernet
+    dns-resolver:
+      config:
+        search:
+        - kemo.labs
+        - kemo.network
+        server:
+        - 192.168.42.9
+        - 192.168.42.10
+    routes:
+      config:
+        - destination: 0.0.0.0/0
+          next-hop-address: 192.168.60.1
+          next-hop-interface: eth0
+          table-id: 254
+  interfaces:
+    - macAddress: '54:52:00:42:60:12'
+      name: eth0

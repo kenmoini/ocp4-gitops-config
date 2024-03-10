@@ -1,0 +1,109 @@
+csiDriver:
+  name: "org.democratic-csi.nfs"
+
+storageClasses:
+- name: truenas-nfs-csi
+  defaultClass: true
+  reclaimPolicy: Delete
+  volumeBindingMode: Immediate
+  allowVolumeExpansion: true
+  parameters:
+    # for block-based storage can be ext3, ext4, xfs
+    # for nfs should be nfs
+    fsType: nfs
+      
+    # if true, volumes created from other snapshots will be
+    # zfs send/received instead of zfs cloned
+    # detachedVolumesFromSnapshots: "false"
+    
+    # if true, volumes created from other volumes will be
+    # zfs send/received instead of zfs cloned
+    # detachedVolumesFromVolumes: "false"
+
+  mountOptions:
+    - noatime
+    - nfsvers=4
+  secrets:
+    provisioner-secret:
+    controller-publish-secret:
+    node-stage-secret:
+    node-publish-secret:
+    controller-expand-secret:
+
+# if your cluster supports snapshots you may enable below
+volumeSnapshotClasses:
+  - name: truenas-nfs-csi
+    parameters:
+    # if true, snapshots will be created with zfs send/receive
+    # detachedSnapshots: "false"
+    secrets:
+      snapshotter-secret:
+
+node:
+  rbac:
+    openshift:
+      privileged: true
+  driver:
+    localtimeHostPath: false
+
+#controller:
+#  rbac:
+#    openshift:
+#      privileged: true
+
+driver:
+  config:
+    driver: freenas-api-nfs
+    instance_id:
+    httpConnection:
+      protocol: https
+      host: deep-thought.kemo.labs
+      port: 443
+      apiKey: 1-vkmpZt0FXwdkhKTMjWNBRPY1awSBFsk8oENAtjzAEH1UVh1nI5cYzLiBex1DRGw2
+      allowInsecure: true
+    zfs:
+      # can be used to override defaults if necessary
+      # the example below is useful for TrueNAS 12
+      #cli:
+      #  sudoEnabled: true
+      #
+      #  leave paths unset for auto-detection
+      #  paths:
+      #    zfs: /usr/local/sbin/zfs
+      #    zpool: /usr/local/sbin/zpool
+      #    sudo: /usr/local/bin/sudo
+      #    chroot: /usr/sbin/chroot
+      
+      # can be used to set arbitrary values on the dataset/zvol
+      # can use handlebars templates with the parameters from the storage class/CO
+      #datasetProperties:
+      #  "org.freenas:description": "{{ parameters.[csi.storage.k8s.io/pvc/namespace] }}/{{ parameters.[csi.storage.k8s.io/pvc/name] }}"
+      #  "org.freenas:test": "{{ parameters.foo }}"
+      #  "org.freenas:test2": "some value"
+
+      datasetParentName: nvmePool/democratic-nfs/serenity-sno.v60.lab.kemo.network/volumes
+      # do NOT make datasetParentName and detachedSnapshotsDatasetParentName overlap
+      # they may be siblings, but neither should be nested in the other
+      # do NOT comment this option out even if you don't plan to use snapshots, just leave it with dummy value
+      detachedSnapshotsDatasetParentName: nvmePool/democratic-nfs/serenity-sno.v60.lab.kemo.network/snaps
+      datasetEnableQuotas: true
+      datasetEnableReservation: false
+      datasetPermissionsMode: "0777"
+      datasetPermissionsUser: 0
+      datasetPermissionsGroup: 0
+
+      # not supported yet
+      #datasetPermissionsAcls:
+      #- "-m everyone@:full_set:allow"
+      #- "-m u:kube:full_set:allow"
+
+    nfs:
+      #shareCommentTemplate: "{{ parameters.[csi.storage.k8s.io/pvc/namespace] }}-{{ parameters.[csi.storage.k8s.io/pvc/name] }}"
+      shareHost: deep-thought.kemo.labs
+      shareAlldirs: false
+      shareAllowedHosts: []
+      shareAllowedNetworks: []
+      shareMaprootUser: root
+      shareMaprootGroup: wheel
+      shareMapallUser: ""
+      shareMapallGroup: ""

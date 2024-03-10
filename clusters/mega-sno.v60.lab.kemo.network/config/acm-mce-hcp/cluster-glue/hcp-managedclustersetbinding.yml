@@ -1,0 +1,8 @@
+---
+apiVersion: cluster.open-cluster-management.io/v1beta2
+kind: ManagedClusterSetBinding
+metadata:
+  namespace: rhacm-config
+  name: hcp
+spec:
+  clusterSet: hcp

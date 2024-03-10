@@ -12,7 +12,7 @@ spec:
     # There are different image flavours available, like distroless and ubi.
     # Please see GitHub release notes for image tags for these flavors.
     # By default the distroless image is used.
-    tag: "v0.9.8-ubi"
+    tag: "v0.9.12-ubi"
 
   prometheus:
     enabled: true

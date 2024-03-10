@@ -1,0 +1,6 @@
+
+- op: add
+  path: /spec/overrides/components/-
+  value:
+    name: cluster-lifecycle
+    enabled: true

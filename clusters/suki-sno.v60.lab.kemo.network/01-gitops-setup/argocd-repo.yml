@@ -1,0 +1,18 @@
+---
+kind: Secret
+apiVersion: v1
+metadata:
+  name: repo-ocp4-gitops-config
+  namespace: openshift-gitops
+  labels:
+    argocd.argoproj.io/secret-type: repository
+  annotations:
+    managed-by: argocd.argoproj.io
+stringData:
+  name: ocp4-gitops-config
+  project: local-cluster
+  type: git
+  #insecure: "true"
+  #proxy: http://192.168.42.31:3128
+  url: https://github.com/kenmoini/ocp4-gitops-config.git
+type: Opaque

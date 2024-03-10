@@ -1,0 +1,30 @@
+### Not needed??
+---
+apiVersion: agent-install.openshift.io/v1beta1
+kind: HypershiftAgentServiceConfig
+metadata:
+  name: hypershift
+  namespace: hypershift
+  annotations:
+    unsupported.agent-install.openshift.io/assisted-image-service-skip-verify-tls: "true"
+spec:
+  databaseStorage:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 10Gi
+  filesystemStorage:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 50Gi
+  imageStorage:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 50Gi
+  mirrorRegistryRef:
+    name: mirror-registry-config

@@ -1,0 +1,66 @@
+---
+apiVersion: hypershift.openshift.io/v1beta1
+kind: HostedCluster
+metadata:
+  name: sno-one
+  namespace: sno-one
+  annotations:
+    argocd.argoproj.io/sync-wave: "30"
+    cluster.open-cluster-management.io/clusterset: 'hcp'
+spec:
+  controllerAvailabilityPolicy: SingleReplica
+  infrastructureAvailabilityPolicy: SingleReplica
+  olmCatalogPlacement: guest # management or guest
+  release:
+    image: quay.io/openshift-release-dev/ocp-release:4.14.11-multi
+  pullSecret:
+    name: pullsecret-loe-rdu-sno-one
+  sshKey:
+    name: sshkey-cluster-sno-one
+  networking:
+    clusterNetwork:
+      - cidr: 10.136.0.0/14
+        hostPrefix: 23
+    serviceNetwork:
+      - cidr: 172.32.0.0/16
+    networkType: OVNKubernetes
+  additionalTrustBundle:
+    name: user-ca-bundle
+  #configuration:
+  #  items:
+  #  - apiVersion: config.openshift.io/v1
+  #    kind: Proxy
+  #    spec:
+  #      httpProxy: ''
+  #      httpsProxy: ''
+  #      noProxy: ''
+  platform:
+    type: Agent
+    agent:
+      agentNamespace: 'loe-rdu-raza'
+  infraID: 'sno-one'
+  dns:
+    baseDomain: 'v60.lab.kemo.network'
+  services:
+  - service: APIServer
+    servicePublishingStrategy:
+      type: LoadBalancer
+  - service: OAuthServer
+    servicePublishingStrategy:
+      type: Route
+  - service: OIDC
+    servicePublishingStrategy:
+      type: Route
+  - service: Konnectivity
+    servicePublishingStrategy:
+      type: Route
+  - service: Ignition
+    servicePublishingStrategy:
+      type: Route
+  etcd:
+    managed:
+      storage:
+        persistentVolume:
+          size: 4Gi
+        type: PersistentVolume
+    managementType: Managed

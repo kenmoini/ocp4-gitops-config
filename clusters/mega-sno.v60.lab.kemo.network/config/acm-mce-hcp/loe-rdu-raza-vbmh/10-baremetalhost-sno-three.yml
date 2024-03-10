@@ -1,0 +1,23 @@
+---
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  annotations:
+    bmac.agent-install.openshift.io/hostname: sno-three.v60.lab.kemo.network
+    inspect.metal3.io: disabled
+    argocd.argoproj.io/sync-wave: "10"
+  name: raza-sno-three
+  namespace: loe-rdu-raza
+  labels:
+    infraenvs.agent-install.openshift.io: loe-rdu-raza
+    #agent-install.openshift.io/bmh: raza-sno-three
+spec:
+  #automatedCleaningMode: disabled
+  bmc:
+    address: 'redfish-virtualmedia://sushy.kemo.labs/redfish/v1/Systems/9c051bf5-cbfd-4115-8ccc-07520899488c'
+    credentialsName: bmc-serenity-raza-sushy
+    disableCertificateVerification: true
+  bootMACAddress: '54:52:00:42:60:13'
+  customDeploy:
+    method: start_assisted_install
+  online: true

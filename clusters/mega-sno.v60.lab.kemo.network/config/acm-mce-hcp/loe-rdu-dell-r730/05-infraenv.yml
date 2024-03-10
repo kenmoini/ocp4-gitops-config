@@ -1,0 +1,27 @@
+---
+apiVersion: agent-install.openshift.io/v1beta1
+kind: InfraEnv
+metadata:
+  name: loe-rdu-dell-r730
+  namespace: loe-rdu-dell-r730
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+  labels:
+    agentclusterinstalls.extensions.hive.openshift.io/location: loe-rdu-dell-r730
+    networkType: static
+spec:
+  agentLabels:
+    'agentclusterinstalls.extensions.hive.openshift.io/location': loe-rdu-dell-r730
+  pullSecretRef:
+    name: pullsecret-loe-rdu-dell-r730
+  sshAuthorizedKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/UQ6SVJ0Jk/fDfLpecIIIfTe3+Ry+oaF8AFKAZwXJ8xMMmrPcPX1JTb4k/keVPT5liqYLb6pxO9yKUb1fLIKXQj+6OaDFaq7J8O3ad5AjpwMH97pynPtjUnltDIPbMTLOUHMZCrvF/PIn0iQ2lfl48lADD/S/tOPh34TI8fv+miuCO7Gdsk9DqT9SxIRG4oKj7ZKp/PKyWuPheRhJ0KiSeFIHR3dXSJnLiL+JkdBotB4IK78Pygwo6P6Wyl2P4gobkKhy/YuTiSImbaN0G8YMJrUu1EzYQ5QlmNqPKVuFH8te41vxmTX47N5h8vfO9c00YFC5H9mtsPMGXYRTiRkB MasterKemoKey
+  additionalNTPSources:
+    - 192.168.42.14
+  nmStateConfigLabelSelector:	
+      matchLabels:	
+        infraenvs.agent-install.openshift.io: loe-rdu-dell-r730
+  cpuArchitecture: x86_64
+  #proxy:
+  #  httpProxy: http://192.168.42.31:3128
+  #  httpsProxy: http://192.168.42.31:3128
+  #  noProxy: 'localhost,.kemo.labs,.kemo.network'

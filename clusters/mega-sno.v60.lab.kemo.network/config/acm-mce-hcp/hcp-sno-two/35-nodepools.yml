@@ -1,0 +1,23 @@
+---
+apiVersion: hypershift.openshift.io/v1beta1
+kind: NodePool
+metadata:
+  name: nodepool-sno-two-1
+  namespace: sno-two
+  annotations:
+    argocd.argoproj.io/sync-wave: "35"
+spec:
+  arch: amd64 # amd64 | ppc64le | s390x | arm64
+  clusterName: sno-two
+  replicas: 1
+  management:
+    autoRepair: false
+    upgradeType: InPlace
+  platform:
+    type: Agent
+    agent:
+      agentLabelSelector:
+        matchLabels:
+          agent-install.openshift.io/bmh: raza-sno-two
+  release:
+    image: quay.io/openshift-release-dev/ocp-release:4.14.11-multi

@@ -1,0 +1,16 @@
+---
+apiVersion: cluster.open-cluster-management.io/v1
+kind: ManagedCluster
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"
+    import.open-cluster-management.io/hosting-cluster-name: local-cluster 
+    import.open-cluster-management.io/klusterlet-deploy-mode: Hosted
+    open-cluster-management/created-via: hypershift
+  labels:
+    cloud: BareMetal
+    vendor: OpenShift
+    name: 'sno-three'
+  name: 'sno-three'
+spec:
+  hubAcceptsClient: true
