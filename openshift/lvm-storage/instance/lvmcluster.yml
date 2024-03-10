@@ -7,10 +7,10 @@ metadata:
 spec:
   storage:
     deviceClasses:
-      - thinPoolConfig:
+      - fstype: xfs
+        thinPoolConfig:
           sizePercent: 90
           name: thin-pool-1
           overprovisionRatio: 10
         name: vg1
-        default: false
-        fstype: xfs
+        #default: false
