@@ -8,6 +8,7 @@ resources:
   - 00-etcd-defrag.yml
   - 01-config-machineconfigs.yml
   - 05-operator-lvm.yml
+  - 05-operator-nfd.yml
   #- 05-operator-pipelines.yml
   #- 05-operator-metallb.yml
   #- 05-operator-quay.yml
@@ -17,6 +18,7 @@ resources:
   #- 10-instance-metallb.yml
   - 10-config-storageclasses.yml
   - 10-helm-democratic-csi.yml
+  - 15-operator-nvidia-gpu.yml
   #- 10-instance-external-secrets.yml
   #- 20-operator-acm.yml
   #- 20-operator-mce.yml
