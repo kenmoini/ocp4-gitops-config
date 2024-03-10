@@ -1,0 +1,29 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helm-democratic-csi
+  namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
+spec:
+  destination:
+    namespace: 'democratic-csi'
+    server: https://kubernetes.default.svc
+  project: local-cluster
+  sources:
+    - chart: democratic-csi
+      helm:
+        valueFiles:
+          - $values/clusters/raza-gpu-sno.kemo.labs/20-config/helm-values/democratic-csi-nfs.yml
+      repoURL: 'https://democratic-csi.github.io/charts/'
+      targetRevision: 0.14.5
+    - ref: values
+      repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
+      targetRevision: main
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      #prune: false
+    syncOptions:
+      - CreateNamespace=true
