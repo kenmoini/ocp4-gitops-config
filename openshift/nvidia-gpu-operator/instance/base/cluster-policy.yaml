@@ -3,6 +3,7 @@ kind: ClusterPolicy
 apiVersion: nvidia.com/v1
 metadata:
   name: gpu-cluster-policy
+  namespace: nvidia-gpu-operator
   annotations:
     argocd.argoproj.io/sync-wave: "15"
 spec:
