@@ -14,7 +14,7 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: HEAD
-      path: clusters/mega-sno.v60.lab.kemo.network/config/machineconfigs/
+      path: clusters/raza-gpu-sno.kemo.labs/config/machineconfigs/
       #directory:
       #  recurse: true
       kustomize:
