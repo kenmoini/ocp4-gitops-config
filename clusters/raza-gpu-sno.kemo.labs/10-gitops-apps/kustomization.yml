@@ -20,6 +20,7 @@ resources:
   - 10-helm-democratic-csi.yml
   - 15-operator-nvidia-gpu.yml
   - 20-operator-devspaces.yml
+  - 20-operator-openshift-ai.yml
   #- 10-instance-external-secrets.yml
   #- 20-operator-acm.yml
   #- 20-operator-mce.yml
