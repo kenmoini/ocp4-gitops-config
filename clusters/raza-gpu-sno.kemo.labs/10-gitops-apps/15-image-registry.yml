@@ -1,0 +1,27 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: config-image-registry
+  namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
+  labels:
+    has-git-repo-objects: "true"
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+  sources:
+    - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
+      targetRevision: main
+      path: clusters/raza-gpu-sno.kemo.labs/20-config/image-registry/
+      #directory:
+      #  recurse: true
+      kustomize:
+        version: v5.1.0
+  project: local-cluster
+  syncPolicy:
+    automated:
+      # prune: true
+      allowEmpty: true
+      # selfHeal: false # overrides changes made on the cluster that drift from git state

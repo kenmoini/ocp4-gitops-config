@@ -19,6 +19,7 @@ resources:
   #- 10-instance-metallb.yml
   - 10-config-storageclasses.yml
   - 10-helm-democratic-csi.yml
+  - 15-image-registry.yml
   - 15-operator-nvidia-gpu.yml
   - 20-operator-devspaces.yml
   - 20-operator-openshift-ai.yml
