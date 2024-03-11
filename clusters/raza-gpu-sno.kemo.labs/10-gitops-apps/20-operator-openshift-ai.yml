@@ -14,7 +14,7 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: main
-      path: openshift/openshift-ai/operator/overlays/stable/
+      path: openshift/openshift-ai/operator/overlays/fast/
       #directory:
       #  recurse: true
       kustomize:
