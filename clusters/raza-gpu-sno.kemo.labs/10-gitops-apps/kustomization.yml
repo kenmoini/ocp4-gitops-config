@@ -9,6 +9,7 @@ resources:
   - 01-config-machineconfigs.yml
   - 05-operator-lvm.yml
   - 05-operator-nfd.yml
+  - 05-helm-reflector.yml
   - 05-operator-pipelines.yml
   - 05-operator-serverless.yml
   - 05-operator-servicemesh.yml
