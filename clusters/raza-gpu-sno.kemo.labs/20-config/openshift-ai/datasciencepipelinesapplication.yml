@@ -5,14 +5,13 @@ metadata:
   finalizers:
     - datasciencepipelinesapplications.opendatahub.io/finalizer
   name: pipelines-definition
-  namespace: my-ds-things
 spec:
   apiServer:
     stripEOF: true
     dbConfigConMaxLifetimeSec: 120
     applyTektonCustomResource: true
     deploy: true
-    enableSamplePipeline: false
+    enableSamplePipeline: true
     autoUpdatePipelineDefaultVersion: true
     archiveLogs: false
     terminateStatus: Cancelled
@@ -32,17 +31,17 @@ spec:
   objectStorage:
     disableHealthCheck: false
     externalStorage:
-      bucket: my-ds-b-7c1e75d0-684f-4480-a6bb-cb1dd482a0ab
+      bucket: pipeline-server-storage-bucket
       host: s3.openshift-storage.svc
-      port: ''
+      port: '443'
       s3CredentialsSecret:
         accessKey: AWS_ACCESS_KEY_ID
         secretKey: AWS_SECRET_ACCESS_KEY
-        secretName: secret-fnkfsb
+        secretName: pipeline-server-storage-bucket
       scheme: https
   persistenceAgent:
     deploy: true
-    numWorkers: 2
+    numWorkers: 1
   scheduledWorkflow:
     cronScheduleTimezone: UTC
     deploy: true

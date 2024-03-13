@@ -6,4 +6,5 @@ namespace: my-ds-things
 resources:
   - namespace.yml
   - objectbucketclaim.yml
+  - datasciencepipelinesapplication.yml
   #- s3-secret-sync-cronjob.yml
