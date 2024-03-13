@@ -5,3 +5,5 @@ metadata:
   name: my-ds-things
   labels:
     opendatahub.io/dashboard: 'true'
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"

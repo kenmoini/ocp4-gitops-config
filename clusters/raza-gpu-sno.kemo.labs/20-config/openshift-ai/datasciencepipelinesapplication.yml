@@ -5,6 +5,8 @@ metadata:
   finalizers:
     - datasciencepipelinesapplications.opendatahub.io/finalizer
   name: pipelines-definition
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
 spec:
   apiServer:
     stripEOF: true
@@ -19,6 +21,9 @@ spec:
     trackArtifacts: true
     collectMetrics: true
     injectDefaultScript: true
+    cABundle:
+      configMapName: trusted-ca-bundle
+      configMapKey: ca-bundle.crt
   database:
     disableHealthCheck: false
     mariaDB:
@@ -32,7 +37,7 @@ spec:
     disableHealthCheck: false
     externalStorage:
       bucket: pipeline-server-storage-bucket
-      host: s3.openshift-storage.svc
+      host: s3.openshift-storage.svc.cluster.local
       port: '443'
       s3CredentialsSecret:
         accessKey: AWS_ACCESS_KEY_ID
@@ -45,3 +50,5 @@ spec:
   scheduledWorkflow:
     cronScheduleTimezone: UTC
     deploy: true
+  #mlpipelineUI:
+  #  deploy: true
