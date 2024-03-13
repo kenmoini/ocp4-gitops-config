@@ -35,3 +35,4 @@ spec:
   multiCloudGateway:
     dbStorageClassName: lvms-vg1-immediate
     reconcileStrategy: standalone
+    disableLoadBalancerService: true
