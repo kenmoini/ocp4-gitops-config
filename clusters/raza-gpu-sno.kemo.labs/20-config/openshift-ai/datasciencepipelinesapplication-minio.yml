@@ -37,15 +37,9 @@ spec:
     deploy: false
   objectStorage:
     disableHealthCheck: false
-    externalStorage:
-      bucket: pipeline-server-storage-bucket
-      host: s3.openshift-storage.svc.cluster.local
-      port: '443'
-      s3CredentialsSecret:
-        accessKey: AWS_ACCESS_KEY_ID
-        secretKey: AWS_SECRET_ACCESS_KEY
-        secretName: pipeline-server-storage-bucket
-      scheme: https
+    minio:
+      deploy: true
+      image: 'quay.io/opendatahub/minio:RELEASE.2019-08-14T20-37-41Z-license-compliance'
   persistenceAgent:
     deploy: true
     numWorkers: 1
