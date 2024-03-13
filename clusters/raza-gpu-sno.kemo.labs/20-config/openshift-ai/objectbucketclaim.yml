@@ -12,6 +12,6 @@ metadata:
 spec:
   additionalConfig:
     bucketclass: noobaa-default-bucket-class
-  objectBucketName: pipeline-server-storage-bucket
+  objectBucketName: obc-my-ds-things-pipeline-server-storage-bucket
   bucketName: pipeline-server-storage-bucket
   storageClassName: openshift-storage.noobaa.io
