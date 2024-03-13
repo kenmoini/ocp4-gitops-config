@@ -52,3 +52,4 @@ spec:
     deploy: true
   #mlpipelineUI:
   #  deploy: true
+  #  image: 'quay.io/opendatahub/odh-ml-pipelines-frontend-container:beta-ui'

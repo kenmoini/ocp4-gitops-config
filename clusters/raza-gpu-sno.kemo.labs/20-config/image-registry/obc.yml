@@ -1,0 +1,18 @@
+---
+apiVersion: objectbucket.io/v1alpha1
+kind: ObjectBucketClaim
+metadata:
+  name: internal-registry
+  namespace: openshift-storage
+  labels:
+    app: noobaa
+    bucket-provisioner: openshift-storage.noobaa.io-obc
+    noobaa-domain: openshift-storage.noobaa.io
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  additionalConfig:
+    bucketclass: noobaa-default-bucket-class
+  objectBucketName: obc-openshift-storage-internal-registry
+  bucketName: internal-registry
+  storageClassName: openshift-storage.noobaa.io

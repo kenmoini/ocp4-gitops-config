@@ -1,0 +1,10 @@
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: image-registry-s3-bundle
+  namespace: openshift-config
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+  labels:
+    config.openshift.io/inject-trusted-cabundle: 'true'

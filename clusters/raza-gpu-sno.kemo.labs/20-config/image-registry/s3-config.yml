@@ -1,0 +1,32 @@
+# oc patch config.image/cluster -p '{"spec":{"storage":{"managementState":"Unmanaged","s3":{"bucket":'\"${bucket_name}\"',"region":"us-east-1","regionEndpoint":'\"https://${route_host}\"',"virtualHostedStyle":false,"encrypt":false,"trustedCA":{"name":"image-registry-s3-bundle"}}}}}' --type=merge
+apiVersion: imageregistry.operator.openshift.io/v1
+kind: Config
+metadata:
+  finalizers:
+    - imageregistry.operator.openshift.io/finalizer
+  name: cluster
+spec:
+  managementState: Managed
+  replicas: 1
+  storage:
+    managementState: Unmanaged
+    s3:
+      bucket: internal-registry
+      region: the-moon
+      regionEndpoint: https://s3-openshift-storage.apps.raza-gpu-sno.kemo.labs
+      virtualHostedStyle: false
+      encrypt: false
+      trustedCA:
+        name: image-registry-s3-bundle
+  logLevel: Normal
+  rolloutStrategy: Recreate
+  operatorLogLevel: Normal
+  requests:
+    read:
+      maxWaitInQueue: 0s
+    write:
+      maxWaitInQueue: 0s
+  observedConfig: null
+  proxy: {}
+  unsupportedConfigOverrides: null
+  defaultRoute: true
