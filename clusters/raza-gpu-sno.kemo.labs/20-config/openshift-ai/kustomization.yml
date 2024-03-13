@@ -7,5 +7,6 @@ resources:
   - namespace.yml
   - trusted-ca-configmap.yml
   - objectbucketclaim.yml
-  - datasciencepipelinesapplication.yml
+  #- datasciencepipelinesapplication.yml
+  - datasciencepipelinesapplication-minio.yml
   #- s3-secret-sync-cronjob.yml

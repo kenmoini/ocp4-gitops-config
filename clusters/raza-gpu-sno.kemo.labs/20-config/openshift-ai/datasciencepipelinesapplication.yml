@@ -9,10 +9,13 @@ metadata:
     argocd.argoproj.io/sync-wave: "10"
 spec:
   apiServer:
+    deploy: true
+    cABundle:
+      configMapName: openshift-service-ca.crt
+      configMapKey: service-ca.crt
     stripEOF: true
     dbConfigConMaxLifetimeSec: 120
     applyTektonCustomResource: true
-    deploy: true
     enableSamplePipeline: true
     autoUpdatePipelineDefaultVersion: true
     archiveLogs: false
@@ -21,11 +24,6 @@ spec:
     trackArtifacts: true
     collectMetrics: true
     injectDefaultScript: true
-    cABundle:
-      #configMapName: trusted-ca-bundle
-      #configMapKey: ca-bundle.crt
-      configMapName: service-ca-bundle
-      configMapKey: service-ca.crt
   database:
     disableHealthCheck: false
     mariaDB:
