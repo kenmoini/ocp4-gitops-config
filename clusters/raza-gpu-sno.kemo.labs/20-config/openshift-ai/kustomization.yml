@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: my-ds-things
+
+resources:
+  - namespace.yml
+  - objectbucketclaim.yml
+  #- s3-secret-sync-cronjob.yml
