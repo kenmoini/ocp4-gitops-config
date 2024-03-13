@@ -22,8 +22,10 @@ spec:
     collectMetrics: true
     injectDefaultScript: true
     cABundle:
-      configMapName: trusted-ca-bundle
-      configMapKey: ca-bundle.crt
+      #configMapName: trusted-ca-bundle
+      #configMapKey: ca-bundle.crt
+      configMapName: service-ca-bundle
+      configMapKey: service-ca.crt
   database:
     disableHealthCheck: false
     mariaDB:
@@ -35,15 +37,17 @@ spec:
     deploy: false
   objectStorage:
     disableHealthCheck: false
-    externalStorage:
-      bucket: pipeline-server-storage-bucket
-      host: s3.openshift-storage.svc.cluster.local
-      port: '443'
-      s3CredentialsSecret:
-        accessKey: AWS_ACCESS_KEY_ID
-        secretKey: AWS_SECRET_ACCESS_KEY
-        secretName: pipeline-server-storage-bucket
-      scheme: https
+    #externalStorage:
+    #  bucket: pipeline-server-storage-bucket
+    #  host: s3.openshift-storage.svc.cluster.local
+    #  port: '443'
+    #  s3CredentialsSecret:
+    #    accessKey: AWS_ACCESS_KEY_ID
+    #    secretKey: AWS_SECRET_ACCESS_KEY
+    #    secretName: pipeline-server-storage-bucket
+    #  scheme: https
+    minio:
+      deploy: true
   persistenceAgent:
     deploy: true
     numWorkers: 1
