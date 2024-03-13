@@ -5,6 +5,8 @@ metadata:
   namespace: openshift-image-registry
   finalizers:
     - kubernetes.io/pvc-protection
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   accessModes:
     - ReadWriteOnce

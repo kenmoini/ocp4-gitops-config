@@ -4,4 +4,7 @@ kind: Kustomization
 
 resources:
 - pvc.yml
-- config.yml
+#- config.yml
+- s3-config.yml
+- obc.yml
+- trusted-ca-bundle.yml

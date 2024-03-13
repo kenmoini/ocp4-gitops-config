@@ -4,6 +4,8 @@ metadata:
   finalizers:
     - imageregistry.operator.openshift.io/finalizer
   name: cluster
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
 spec:
   logLevel: Normal
   rolloutStrategy: Recreate
