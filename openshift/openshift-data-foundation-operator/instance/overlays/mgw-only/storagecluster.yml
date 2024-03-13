@@ -13,6 +13,10 @@ metadata:
   finalizers:
     - storagecluster.ocs.openshift.io
 spec:
+  multiCloudGateway:
+    dbStorageClassName: lvms-vg1-immediate
+    reconcileStrategy: standalone
+    disableLoadBalancerService: true
   arbiter: {}
   encryption:
     kms: {}
@@ -32,7 +36,3 @@ spec:
     cephDashboard: {}
     cephConfig: {}
   mirroring: {}
-  multiCloudGateway:
-    dbStorageClassName: lvms-vg1-immediate
-    reconcileStrategy: standalone
-    disableLoadBalancerService: true
