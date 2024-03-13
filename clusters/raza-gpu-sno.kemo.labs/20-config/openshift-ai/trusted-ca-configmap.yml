@@ -11,7 +11,7 @@ metadata:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: service-ca-configmap
+  name: service-ca-bundle
   annotations:
     argocd.argoproj.io/sync-wave: "2"
     service.beta.openshift.io/inject-cabundle: 'true'
