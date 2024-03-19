@@ -22,10 +22,11 @@ resources:
   #- 10-instance-metallb.yml
   - 10-config-storageclasses.yml
   - 10-helm-democratic-csi.yml
-  - 15-image-registry.yml
   - 15-operator-nvidia-gpu.yml
+  - 20-image-registry.yml
   - 20-operator-devspaces.yml
   - 20-operator-openshift-ai.yml
+  - 25-operator-webterminal.yml
   - 30-instance-openshift-ai.yml
   - 50-data-science-setup.yml
   #- 10-instance-external-secrets.yml

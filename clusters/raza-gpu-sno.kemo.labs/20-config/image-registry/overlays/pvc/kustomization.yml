@@ -3,9 +3,5 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-#- pvc.yml
-#- config.yml
-
-- s3-config.yml
-- obc.yml
-- trusted-ca-bundle.yml
+  - pvc.yml
+  - config.yml

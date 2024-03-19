@@ -13,7 +13,7 @@ spec:
   storage:
     managementState: Unmanaged
     s3:
-      bucket: internal-registry
+      bucket: internal-registry-bucket
       region: the-moon
       regionEndpoint: https://s3-openshift-storage.apps.raza-gpu-sno.kemo.labs
       virtualHostedStyle: false
