@@ -14,7 +14,7 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: HEAD
-      path: openshift/mtv-operator/operator/overlays/release-v2.5/
+      path: openshift/mtv-operator/operator/overlays/release-v2.6/
       #directory:
       #  recurse: true
       kustomize:
