@@ -9,3 +9,6 @@ spec:
   kubeletConfig:
     podsPerCore: 0
     maxPods: 500
+    systemReserved:
+      cpu: 4000m
+      memory: 8Gi
