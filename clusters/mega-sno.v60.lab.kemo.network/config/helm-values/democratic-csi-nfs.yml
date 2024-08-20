@@ -46,10 +46,10 @@ node:
   driver:
     localtimeHostPath: false
 
-#controller:
-#  rbac:
-#    openshift:
-#      privileged: true
+controller:
+  rbac:
+    openshift:
+      privileged: true
 
 driver:
   config:
