@@ -30,7 +30,7 @@ spec:
         name: insights
       - enabled: true
         name: multicluster-engine
-      - enabled: false
+      - enabled: true
         name: multicluster-observability
       - enabled: false
         name: search
