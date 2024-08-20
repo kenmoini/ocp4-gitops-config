@@ -5,5 +5,5 @@ kind: Kustomization
 namespace: external-secrets
 
 resources:
-  - internal-vault-secret.yaml
+  #- internal-vault-secret.yaml
   - vault-clusterstore.yaml
