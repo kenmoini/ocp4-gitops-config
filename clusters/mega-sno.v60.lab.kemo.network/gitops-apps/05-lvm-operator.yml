@@ -14,7 +14,7 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: HEAD
-      path: openshift/lvm-storage/operator/overlays/stable-4.14/
+      path: openshift/lvm-storage/operator/overlays/stable-4.15/
       #directory:
       #  recurse: true
       kustomize:
