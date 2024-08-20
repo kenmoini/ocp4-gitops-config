@@ -57,7 +57,8 @@ driver:
     instance_id:
     httpConnection:
       protocol: https
-      host: deep-thought.kemo.labs
+      #host: deep-thought.kemo.labs
+      host: 192.168.42.48
       port: 443
       apiKey: 1-vkmpZt0FXwdkhKTMjWNBRPY1awSBFsk8oENAtjzAEH1UVh1nI5cYzLiBex1DRGw2
       allowInsecure: true
@@ -99,7 +100,8 @@ driver:
 
     nfs:
       #shareCommentTemplate: "{{ parameters.[csi.storage.k8s.io/pvc/namespace] }}-{{ parameters.[csi.storage.k8s.io/pvc/name] }}"
-      shareHost: deep-thought.kemo.labs
+      #shareHost: deep-thought.kemo.labs
+      shareHost: 192.168.42.48
       shareAlldirs: false
       shareAllowedHosts: []
       shareAllowedNetworks: []
