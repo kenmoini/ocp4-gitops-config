@@ -5,6 +5,7 @@ metadata:
   annotations:
     deployOVS: 'false'
 spec:
+  vddkInitImage: disconn-harbor.d70.kemo.labs/library/vddk:latest
   liveMigrationConfig:
     allowAutoConverge: false
     allowPostCopy: true
