@@ -5,3 +5,4 @@ kind: Kustomization
 resources:
   - 99-master-enable-iscsid-multipathd.yml
   - master-kubeletconfig-max-pods.yml
+  - master-kubelet-log-level.yaml
