@@ -1,0 +1,15 @@
+---
+apiVersion: forklift.konveyor.io/v1beta1
+kind: Provider
+metadata:
+  name: rdu-lab-vsphere
+  namespace: openshift-mtv
+spec:
+  secret:
+    name: rdu-lab-vsphere
+    namespace: openshift-mtv
+  settings:
+    sdkEndpoint: vcenter
+    vddkInitImage: 'disconn-harbor.d70.kemo.labs/library/vddk:latest'
+  type: vsphere
+  url: 'https://vcenter.kemo.labs/sdk'
