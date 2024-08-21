@@ -14,7 +14,7 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: main
-      path: openshift/mce/operator/overlays/stable-2.4/
+      path: openshift/mce/operator/overlays/stable-2.6/
       #directory:
       #  recurse: true
       kustomize:
