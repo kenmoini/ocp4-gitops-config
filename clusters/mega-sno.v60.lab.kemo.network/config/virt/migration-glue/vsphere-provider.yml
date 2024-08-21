@@ -4,6 +4,8 @@ kind: Provider
 metadata:
   name: rdu-lab-vsphere
   namespace: openshift-mtv
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
 spec:
   secret:
     name: rdu-lab-vsphere
