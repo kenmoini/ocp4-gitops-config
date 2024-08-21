@@ -9,6 +9,11 @@ metadata:
   labels:
     has-git-repo-objects: "true"
 spec:
+  ignoreDifferences:
+    - kind: MultiClusterEngine
+      name: multiclusterengine
+      jsonPointers:
+        - /spec/overrides/components
   destination:
     server: 'https://kubernetes.default.svc'
   sources:
@@ -21,6 +26,8 @@ spec:
         version: v5.1.0
   project: local-cluster
   syncPolicy:
+    syncOptions:
+      - RespectIgnoreDifferences=true
     automated:
       # prune: true
       allowEmpty: true
