@@ -29,8 +29,10 @@ resources:
   - openshift-virt-operator.yml
   - nmstate-instance.yml
   - ocp-virt-instance.yml
+  #- 50-metallb-config.yml # added in the instance-metallb.yml app
   - 50-mtv-instance.yml
   - 75-virt-config.yml
+  - 100-mco.yml
   #- mtv-instance.yml
   #- 50-acm-mce-hcp.yml
   #- cluster-config.yml
