@@ -26,17 +26,17 @@ spec:
         name: console
       - enabled: true
         name: grc
-      - enabled: false
+      - enabled: true
         name: insights
       - enabled: true
         name: multicluster-engine
       - enabled: true
         name: multicluster-observability
-      - enabled: false
+      - enabled: true
         name: search
-      - enabled: false
+      - enabled: true
         name: submariner-addon
-      - enabled: false
+      - enabled: true
         name: volsync
-      - enabled: false
+      - enabled: true
         name: cluster-backup
