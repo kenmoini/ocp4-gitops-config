@@ -7,34 +7,35 @@ resources:
   - 00-additionaltrustbundle.yml
   - 00-etcd-defrag.yml
   - 01-config-machineconfigs.yml
+  - 04-operator-external-secrets.yml
+  - 05-instance-external-secrets.yml
   - 05-lvm-operator.yml
-  - 05-operator-pipelines.yml
-  - 05-operator-metallb.yml
-  - 05-operator-nfd.yml
-  - 05-operator-sso.yml
-  - 05-operator-external-secrets.yml
-  - 05-operator-aap2.yml
-  - 05-operator-gitea.yml
-  - 10-lvm-instance.yml
-  - 10-instance-metallb.yml
-  - 10-instance-nfd.yml
-  - 10-instance-sso.yml
+  - 06-lvm-instance.yml
+  - 07-helm-democratic-csi.yml
   - 10-config-storageclasses.yml
-  - 10-helm-democratic-csi.yml
-  - 10-instance-external-secrets.yml
-  - 20-operator-acm.yml
-  - 20-operator-mce.yml
-  - 30-instance-acm.yml
-  - 30-instance-mce.yml
-  - mtv-operator.yml
-  - nmstate-operator.yml
-  - openshift-virt-operator.yml
-  - nmstate-instance.yml
-  - ocp-virt-instance.yml
-  - 50-mtv-instance.yml
-  - 75-virt-config.yml
-  - 100-mco.yml
-  - 100-ztp-sso.yml
+  #- 05-operator-pipelines.yml
+  #- 05-operator-metallb.yml
+  #- 05-operator-nfd.yml
+  #- 05-operator-sso.yml
+  #- 05-operator-aap2.yml
+  #- 05-operator-gitea.yml
+  #- 10-instance-metallb.yml
+  #- 10-instance-nfd.yml
+  #- 10-instance-sso.yml
+  #- 20-operator-acm.yml
+  #- 20-operator-mce.yml
+  #- 30-instance-acm.yml
+  #- 30-instance-mce.yml
+  #- mtv-operator.yml
+  #- nmstate-operator.yml
+  #- openshift-virt-operator.yml
+  #- nmstate-instance.yml
+  #- ocp-virt-instance.yml
+  #- 50-mtv-instance.yml
+  #- 75-virt-config.yml
+  #- 100-mco.yml
+  #- 100-ztp-sso.yml
+  
   #- 50-metallb-config.yml # added in the instance-metallb.yml app
   #- 05-operator-external-dns.yml
   #- 05-operator-quay.yml

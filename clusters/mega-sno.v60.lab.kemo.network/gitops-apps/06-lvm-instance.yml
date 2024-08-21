@@ -5,7 +5,7 @@ metadata:
   name: lvm-instance
   namespace: openshift-gitops
   annotations:
-    argocd.argoproj.io/sync-wave: "10"
+    argocd.argoproj.io/sync-wave: "6"
   labels:
     has-git-repo-objects: "true"
 spec:
