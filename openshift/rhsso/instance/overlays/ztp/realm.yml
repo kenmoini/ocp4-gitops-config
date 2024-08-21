@@ -1,0 +1,28 @@
+kind: KeycloakRealm
+apiVersion: keycloak.org/v1alpha1
+metadata:
+  name: ztp
+  namespace: sso
+  labels:
+    app: sso
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
+spec:
+  realm:
+    id: ztp
+    realm: ztp
+    displayName: ZTP Realm
+
+    enabled: true
+    verifyEmail: false
+    internationalizationEnabled: true
+    sslRequired: 'none'
+
+    accountTheme: rh-sso.v2
+    adminTheme: rh-sso
+    emailTheme: rh-sso
+    loginTheme: rh-sso
+
+  instanceSelector:
+    matchLabels:
+      app: sso
