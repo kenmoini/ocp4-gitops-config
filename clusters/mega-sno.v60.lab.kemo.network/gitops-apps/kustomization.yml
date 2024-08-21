@@ -20,6 +20,7 @@ resources:
   - 10-lvm-instance.yml
   - 10-instance-metallb.yml
   - 10-instance-nfd.yml
+  - 10-instance-sso.yml
   - 10-config-storageclasses.yml
   - 10-helm-democratic-csi.yml
   - 10-instance-external-secrets.yml

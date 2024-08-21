@@ -1,7 +1,7 @@
 apiVersion: keycloak.org/v1alpha1
 kind: Keycloak
 metadata:
-  name: rhsso
+  name: hub
   namespace: sso
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
@@ -12,3 +12,13 @@ spec:
   profile: RHSSO
   externalAccess:
     enabled: true
+  #storageClassName: lvms-vg1-immediate
+  keycloakDeploymentSpec:
+    imagePullPolicy: IfNotPresent
+    resources:
+      limits:
+        cpu: 1000m
+        memory: 1024Mi
+      requests:
+        cpu: 500m
+        memory: 512Mi
