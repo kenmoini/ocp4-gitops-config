@@ -1,0 +1,17 @@
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  creationTimestamp: null
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+  labels:
+    operators.coreos.com/gitea-operator.openshift-operators: ''
+  name: gitea-operator
+  namespace: openshift-operators
+spec:
+  channel: stable
+  installPlanApproval: Automatic
+  name: gitea-operator
+  source: kenmoini-gitea
+  sourceNamespace: openshift-marketplace

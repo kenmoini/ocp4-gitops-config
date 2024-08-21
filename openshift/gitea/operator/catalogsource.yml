@@ -1,0 +1,28 @@
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  creationTimestamp: null
+  name: kenmoini-gitea
+  namespace: openshift-marketplace
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+spec:
+  sourceType: grpc
+  image: quay.io/kenmoini/gitea-catalog:latest
+  displayName: Gitea
+  publisher: Ken Moini
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  creationTimestamp: null
+  name: redhat-gpte-gitea
+  namespace: openshift-marketplace
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+spec:
+  sourceType: grpc
+  image: quay.io/gpte-devops-automation/gitea-catalog:latest
+  displayName: Red Hat GPTE (Gitea)
+  publisher: Red Hat GPTE
