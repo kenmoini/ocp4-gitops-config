@@ -14,7 +14,7 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: HEAD
-      path: openshift/advanced-cluster-management/operator/overlays/release-2.9/
+      path: openshift/advanced-cluster-management/operator/overlays/release-2.11/
       #directory:
       #  recurse: true
       kustomize:
