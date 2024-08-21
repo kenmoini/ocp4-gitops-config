@@ -3,6 +3,8 @@ apiVersion: observability.open-cluster-management.io/v1beta2
 kind: MultiClusterObservability
 metadata:
   name: observability
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
 spec:
   #availabilityConfig: Basic # depreciated in v1beta2 lolwtf
   advanced:
