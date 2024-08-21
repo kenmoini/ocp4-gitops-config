@@ -29,6 +29,7 @@ resources:
   - openshift-virt-operator.yml
   - nmstate-instance.yml
   - ocp-virt-instance.yml
+  - 50-mtv-instance.yml
   #- mtv-instance.yml
   #- 50-acm-mce-hcp.yml
   #- cluster-config.yml
