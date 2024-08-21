@@ -13,6 +13,8 @@ resources:
   - 05-operator-nfd.yml
   - 05-operator-quay.yml
   - 05-operator-external-secrets.yml
+  - 05-operator-aap2.yml
+  - 05-operator-gitea.yml
   #- 05-operator-external-dns.yml
   - 10-lvm-instance.yml
   - 10-instance-metallb.yml
