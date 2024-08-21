@@ -14,7 +14,7 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: main
-      path: openshift/sso/operator/overlays/stable/
+      path: openshift/rhsso/operator/overlays/stable/
       #directory:
       #  recurse: true
       kustomize:
