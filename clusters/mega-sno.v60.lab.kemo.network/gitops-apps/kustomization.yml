@@ -11,12 +11,10 @@ resources:
   - 05-operator-pipelines.yml
   - 05-operator-metallb.yml
   - 05-operator-nfd.yml
-  #- 05-operator-quay.yml
   - 05-operator-sso.yml
   - 05-operator-external-secrets.yml
   - 05-operator-aap2.yml
   - 05-operator-gitea.yml
-  #- 05-operator-external-dns.yml
   - 10-lvm-instance.yml
   - 10-instance-metallb.yml
   - 10-instance-nfd.yml
@@ -33,10 +31,13 @@ resources:
   - openshift-virt-operator.yml
   - nmstate-instance.yml
   - ocp-virt-instance.yml
-  #- 50-metallb-config.yml # added in the instance-metallb.yml app
   - 50-mtv-instance.yml
   - 75-virt-config.yml
   - 100-mco.yml
+  - 100-ztp-sso.yml
+  #- 50-metallb-config.yml # added in the instance-metallb.yml app
+  #- 05-operator-external-dns.yml
+  #- 05-operator-quay.yml
   #- mtv-instance.yml
   #- 50-acm-mce-hcp.yml
   #- cluster-config.yml
