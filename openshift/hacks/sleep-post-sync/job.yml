@@ -1,0 +1,23 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: post-sync-wait-
+  namespace: openshift-gitops
+  #annotations:
+    #argocd.argoproj.io/sync-wave: "100"
+    #argocd.argoproj.io/hook: PostSync
+    #argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: sleep
+        image: registry.redhat.io/openshift4/ose-cli:latest
+        command:
+          - /bin/bash
+          - -c
+          - |
+            #!/usr/bin/env bash
+            sleep 30
+      restartPolicy: Never
