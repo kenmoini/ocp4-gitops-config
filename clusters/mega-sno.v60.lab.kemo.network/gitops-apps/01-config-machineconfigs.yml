@@ -19,6 +19,11 @@ spec:
       #  recurse: true
       kustomize:
         version: v5.1.0
+    #- repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
+    #  targetRevision: HEAD
+    #  path: openshift/hacks/sleep-post-sync/
+    #  kustomize:
+    #    version: v5.1.0
   project: local-cluster
   syncPolicy:
     automated:

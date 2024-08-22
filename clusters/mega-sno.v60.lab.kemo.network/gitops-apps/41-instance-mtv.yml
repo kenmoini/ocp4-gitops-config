@@ -2,10 +2,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: instance-sso
+  name: mtv-instance
   namespace: openshift-gitops
   annotations:
-    argocd.argoproj.io/sync-wave: "10"
+    argocd.argoproj.io/sync-wave: "41"
   labels:
     has-git-repo-objects: "true"
 spec:
@@ -14,16 +14,14 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: HEAD
-      path: openshift/rhsso/instance/overlays/default/
+      path: clusters/mega-sno.v60.lab.kemo.network/config/virt/mtv
       #directory:
       #  recurse: true
       kustomize:
         version: v5.1.0
   project: local-cluster
   syncPolicy:
-    syncOptions:
-      - RespectIgnoreDifferences=true
     automated:
-      # prune: true
+      prune: true
       allowEmpty: true
       # selfHeal: false # overrides changes made on the cluster that drift from git state

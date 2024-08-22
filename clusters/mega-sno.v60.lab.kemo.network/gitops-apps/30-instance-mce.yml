@@ -13,7 +13,7 @@ spec:
     - kind: MultiClusterEngine
       name: multiclusterengine
       jsonPointers:
-        - /spec/overrides/components
+        - /spec/overrides
   destination:
     server: 'https://kubernetes.default.svc'
   sources:

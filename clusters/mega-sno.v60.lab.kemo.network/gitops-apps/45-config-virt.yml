@@ -5,7 +5,7 @@ metadata:
   name: config-virt
   namespace: openshift-gitops
   annotations:
-    argocd.argoproj.io/sync-wave: "75"
+    argocd.argoproj.io/sync-wave: "45"
   labels:
     has-git-repo-objects: "true"
 spec:
