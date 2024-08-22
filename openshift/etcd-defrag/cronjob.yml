@@ -3,6 +3,8 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: defrag-etcd
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
 spec:
   schedule: "36 9 * * *"
   concurrencyPolicy: Forbid
