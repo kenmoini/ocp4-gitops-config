@@ -9,8 +9,8 @@ resources:
   - 01-config-machineconfigs.yml
   - 04-operator-external-secrets.yml
   - 05-instance-external-secrets.yml
-  - 05-lvm-operator.yml
-  - 06-lvm-instance.yml
+  - 05-operator-lvm.yml
+  - 06-instance-lvm.yml
   - 07-helm-democratic-csi.yml
   - 10-config-storageclasses.yml
   - 11-operator-pipelines.yml
@@ -23,14 +23,15 @@ resources:
   - 18-operator-mce.yml
   - 19-operator-quay.yml
   #- 20-operator-external-dns.yml
-  #- 10-instance-metallb.yml
-  #- 10-instance-nfd.yml
+  - 21-operator-nmstate.yml
+  - 22-operator-mtv.yml
+  - 23-operator-openshift-virt.yml
+  
+  #- 50-instance-metallb.yml
+  #- 51-instance-nfd.yml
   #- 10-instance-sso.yml
   #- 30-instance-acm.yml
   #- 30-instance-mce.yml
-  #- mtv-operator.yml
-  #- nmstate-operator.yml
-  #- openshift-virt-operator.yml
   #- nmstate-instance.yml
   #- ocp-virt-instance.yml
   #- 50-mtv-instance.yml

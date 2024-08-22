@@ -2,10 +2,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mtv-operator
+  name: openshift-virt-operator
   namespace: openshift-gitops
   annotations:
-    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-wave: "23"
   labels:
     has-git-repo-objects: "true"
 spec:
@@ -14,7 +14,7 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: HEAD
-      path: openshift/mtv-operator/operator/overlays/release-v2.6/
+      path: openshift/ocp-virt/overlays/emulation
       #directory:
       #  recurse: true
       kustomize:

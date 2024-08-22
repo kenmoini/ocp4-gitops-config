@@ -1,0 +1,46 @@
+apiVersion: operator.tekton.dev/v1alpha1
+kind: TektonConfig
+metadata:
+  name: config
+spec:
+  pipeline:
+    options:
+      horizontalPodAutoscalers:
+        tekton-operator-proxy-webhook:
+          metadata:
+            creationTimestamp: null
+          spec:
+            maxReplicas: 2
+            metrics:
+              - resource:
+                  name: cpu
+                  target:
+                    averageUtilization: 85
+                    type: Utilization
+                type: Resource
+            minReplicas: 1
+            scaleTargetRef:
+              kind: ''
+              name: ''
+          status:
+            currentMetrics: null
+            desiredReplicas: 0
+        tekton-pipelines-webhook:
+          metadata:
+            creationTimestamp: null
+          spec:
+            maxReplicas: 2
+            metrics:
+              - resource:
+                  name: cpu
+                  target:
+                    averageUtilization: 85
+                    type: Utilization
+                type: Resource
+            minReplicas: 1
+            scaleTargetRef:
+              kind: ''
+              name: ''
+          status:
+            currentMetrics: null
+            desiredReplicas: 0
