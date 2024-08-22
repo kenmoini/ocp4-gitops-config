@@ -13,17 +13,19 @@ resources:
   - 06-lvm-instance.yml
   - 07-helm-democratic-csi.yml
   - 10-config-storageclasses.yml
-  #- 05-operator-pipelines.yml
-  #- 05-operator-metallb.yml
-  #- 05-operator-nfd.yml
-  #- 05-operator-sso.yml
-  #- 05-operator-aap2.yml
-  #- 05-operator-gitea.yml
+  - 11-operator-pipelines.yml
+  - 12-operator-metallb.yml
+  - 13-operator-nfd.yml
+  - 14-operator-sso.yml
+  - 15-operator-aap2.yml
+  - 16-operator-gitea.yml
+  - 17-operator-acm.yml
+  - 18-operator-mce.yml
+  - 19-operator-quay.yml
+  #- 20-operator-external-dns.yml
   #- 10-instance-metallb.yml
   #- 10-instance-nfd.yml
   #- 10-instance-sso.yml
-  #- 20-operator-acm.yml
-  #- 20-operator-mce.yml
   #- 30-instance-acm.yml
   #- 30-instance-mce.yml
   #- mtv-operator.yml
@@ -37,8 +39,6 @@ resources:
   #- 100-ztp-sso.yml
   
   #- 50-metallb-config.yml # added in the instance-metallb.yml app
-  #- 05-operator-external-dns.yml
-  #- 05-operator-quay.yml
   #- mtv-instance.yml
   #- 50-acm-mce-hcp.yml
   #- cluster-config.yml

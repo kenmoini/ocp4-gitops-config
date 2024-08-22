@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: operator-mce
+  name: operator-external-dns
   namespace: openshift-gitops
   annotations:
     argocd.argoproj.io/sync-wave: "20"
@@ -14,11 +14,11 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: main
-      path: openshift/mce/operator/overlays/stable-2.6/
+      path: openshift/external-dns-operator/operator/overlays/stable-v1/
       #directory:
       #  recurse: true
-      kustomize:
-        version: v5.1.0
+      kustomize: {}
+        #version: v5.1.0
   project: local-cluster
   syncPolicy:
     automated:

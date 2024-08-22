@@ -2,10 +2,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: operator-acm
+  name: operator-pipelines
   namespace: openshift-gitops
   annotations:
-    argocd.argoproj.io/sync-wave: "20"
+    argocd.argoproj.io/sync-wave: "11"
   labels:
     has-git-repo-objects: "true"
 spec:
@@ -13,8 +13,8 @@ spec:
     server: 'https://kubernetes.default.svc'
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
-      targetRevision: HEAD
-      path: openshift/advanced-cluster-management/operator/overlays/release-2.11/
+      targetRevision: main
+      path: openshift/openshift-pipelines/overlays/latest/
       #directory:
       #  recurse: true
       kustomize:

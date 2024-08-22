@@ -2,10 +2,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: operator-external-dns
+  name: operator-metallb
   namespace: openshift-gitops
   annotations:
-    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-wave: "12"
   labels:
     has-git-repo-objects: "true"
 spec:
@@ -14,7 +14,7 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: main
-      path: openshift/external-dns-operator/operator/overlays/stable-v1/
+      path: openshift/metallb/operator/
       #directory:
       #  recurse: true
       kustomize:

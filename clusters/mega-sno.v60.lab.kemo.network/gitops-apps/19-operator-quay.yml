@@ -5,7 +5,7 @@ metadata:
   name: operator-quay
   namespace: openshift-gitops
   annotations:
-    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-wave: "19"
   labels:
     has-git-repo-objects: "true"
 spec:
@@ -17,8 +17,8 @@ spec:
       path: openshift/quay-operator/operator/overlays/stable-3.10/
       #directory:
       #  recurse: true
-      kustomize:
-        version: v5.1.0
+      kustomize: {}
+        #version: v5.1.0
   project: local-cluster
   syncPolicy:
     automated:
