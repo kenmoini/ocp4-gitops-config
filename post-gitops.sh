@@ -1,11 +1,11 @@
 #!/bin/bash
 
-echo "===== Deploying Multicluster Engine..."
-oc apply -k openshift/mce/instance/overlays/kitchen-sink/
-echo "- Sleeping for 15s..." && sleep 15
-
 echo "===== Deploying ACM..."
 oc apply -k openshift/advanced-cluster-management/instance/base/
+echo "- Sleeping for 60s..." && sleep 60
+
+echo "===== Deploying Multicluster Engine..."
+oc apply -k openshift/mce/instance/overlays/kitchen-sink/
 echo "- Sleeping for 15s..." && sleep 15
 
 echo "===== Deploying MetalLB..."
