@@ -1,0 +1,5 @@
+- op: add
+  path: /spec/controller/env/-
+  value:
+    name: ARGOCD_SYNC_WAVE_DELAY
+    value: "15"

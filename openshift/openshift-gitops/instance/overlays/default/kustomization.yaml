@@ -18,3 +18,4 @@ components:
   - ../../components/health-check-odf
   - ../../components/health-check-olm
   - ../../components/health-check-openshift-builds
+  - ../../components/sync-wave-wait
