@@ -13,7 +13,7 @@ resources:
   - 06-instance-lvm.yml
   - 07-helm-democratic-csi.yml
   - 10-config-storageclasses.yml
-  - 11-operator-pipelines.yml
+  #- 11-operator-pipelines.yml
   - 12-operator-metallb.yml
   - 13-operator-nfd.yml
   - 14-operator-sso.yml
