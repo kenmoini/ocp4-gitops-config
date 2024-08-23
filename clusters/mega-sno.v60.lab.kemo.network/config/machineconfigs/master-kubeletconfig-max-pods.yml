@@ -3,20 +3,20 @@ kind: KubeletConfig
 metadata:
   name: master-set-kubeletconfig
 spec:
-  #autoSizingReserved: true
+  autoSizingReserved: true
   kubeletConfig:
     podsPerCore: 0
     maxPods: 500
-    eventRecordQPS: 1000
-    kubeAPIQPS: 1000
-    kubeAPIBurst: 1000
     containerLogMaxSize: 5Mi
-    systemReserved:
-      cpu: 20000m
-      memory: 16Gi
-    kubeReserved:
-      cpu: 20000m
-      memory: 16Gi
+    #eventRecordQPS: 1000
+    #kubeAPIQPS: 1000
+    #kubeAPIBurst: 1000
+    #systemReserved:
+    #  cpu: 20000m
+    #  memory: 16Gi
+    #kubeReserved:
+    #  cpu: 20000m
+    #  memory: 16Gi
 
   machineConfigPoolSelector:
     matchLabels:
