@@ -1,0 +1,144 @@
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: v60-pool
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
+spec:
+  addresses:
+    - 192.168.60.11-192.168.60.69
+  autoAssign: false
+  #protocol: layer2
+#---
+#apiVersion: metallb.io/v1beta1
+#kind: IPAddressPool
+#metadata:
+#  name: v60-hcp-auto-pool
+#  annotations:
+#    argocd.argoproj.io/sync-wave: "15"
+#spec:
+#  addresses:
+#    - 192.168.60.120-192.168.60.150
+#  autoAssign: true
+#  #protocol: layer2
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: v60-hcp-sno-one-pool
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
+spec:
+  addresses:
+    - 192.168.60.111/32
+  autoAssign: true
+  serviceAllocation:
+    priority: 50
+    namespaces: 
+      - sno-one-sno-one
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: v60-hcp-sno-two-pool
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
+spec:
+  addresses:
+    - 192.168.60.112/32
+  autoAssign: true
+  serviceAllocation:
+    priority: 50
+    namespaces: 
+      - sno-two-sno-two
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: v60-hcp-sno-three-pool
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
+spec:
+  addresses:
+    - 192.168.60.113/32
+  autoAssign: true
+  serviceAllocation:
+    priority: 50
+    namespaces: 
+      - sno-three-sno-three
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: v60-hcp-sno-four-pool
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
+spec:
+  addresses:
+    - 192.168.60.114/32
+  autoAssign: true
+  serviceAllocation:
+    priority: 50
+    namespaces: 
+      - sno-four-sno-four
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: v60-hcp-sno-five-pool
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
+spec:
+  addresses:
+    - 192.168.60.115/32
+  autoAssign: true
+  serviceAllocation:
+    priority: 50
+    namespaces: 
+      - sno-five-sno-five
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: v60-hcp-sno-six-pool
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
+spec:
+  addresses:
+    - 192.168.60.116/32
+  autoAssign: true
+  serviceAllocation:
+    priority: 50
+    namespaces: 
+      - sno-six-sno-six
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: v60-hcp-sno-seven-pool
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
+spec:
+  addresses:
+    - 192.168.60.117/32
+  autoAssign: true
+  serviceAllocation:
+    priority: 50
+    namespaces: 
+      - sno-seven-sno-seven
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: v60-hcp-sno-eight-pool
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
+spec:
+  addresses:
+    - 192.168.60.118/32
+  autoAssign: true
+  serviceAllocation:
+    priority: 50
+    namespaces: 
+      - sno-eight-sno-eight

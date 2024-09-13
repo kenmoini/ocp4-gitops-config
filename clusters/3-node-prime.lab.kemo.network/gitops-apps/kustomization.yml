@@ -25,12 +25,12 @@ resources:
   - 22-operator-mtv.yml
   - 23-operator-openshift-virt.yml
   
-  #- 30-instance-mce.yml
-  #- 31-instance-acm.yml
+  - 30-instance-mce.yml
+  - 31-instance-acm.yml
   #- 32-instance-metallb.yml
-  #- 33-instance-nfd.yml
+  - 33-instance-nfd.yml
   #- 34-instance-sso.yml
-  #- 35-instance-nmstate.yml
+  - 35-instance-nmstate.yml
 
   #- 40-instance-ocp-virt.yml
   #- 41-instance-mtv.yml
