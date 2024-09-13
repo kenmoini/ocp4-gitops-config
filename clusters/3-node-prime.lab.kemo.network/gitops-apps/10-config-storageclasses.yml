@@ -14,7 +14,7 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: HEAD
-      path: clusters/mega-sno.v60.lab.kemo.network/config/storageclasses/
+      path: clusters/3-node-prime.lab.kemo.network/config/storageclasses/
       #directory:
       #  recurse: true
       kustomize:

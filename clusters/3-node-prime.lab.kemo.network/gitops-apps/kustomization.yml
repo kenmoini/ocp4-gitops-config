@@ -7,6 +7,7 @@ resources:
   - 00-additionaltrustbundle.yml
   #- 00-etcd-defrag.yml
   - 01-config-machineconfigs.yml
+  - 02-config-oauth.yml
   - 04-operator-external-secrets.yml
   - 05-instance-external-secrets.yml
   - 07-helm-democratic-csi.yml

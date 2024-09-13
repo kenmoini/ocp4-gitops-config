@@ -2,10 +2,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: acm-mce-hcp
+  name: config-oauth
   namespace: openshift-gitops
   annotations:
-    argocd.argoproj.io/sync-wave: "50"
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     has-git-repo-objects: "true"
 spec:
@@ -13,12 +13,17 @@ spec:
     server: 'https://kubernetes.default.svc'
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
-      targetRevision: main
-      path: clusters/3-node-prime.lab.kemo.network/config/acm-mce-hcp/
+      targetRevision: HEAD
+      path: clusters/3-node-prime.lab.kemo.network/config/identity-providers/overlays/multi-auth/
       #directory:
       #  recurse: true
       kustomize:
         version: v5.1.0
+    #- repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
+    #  targetRevision: HEAD
+    #  path: openshift/hacks/sleep-post-sync/
+    #  kustomize:
+    #    version: v5.1.0
   project: local-cluster
   syncPolicy:
     automated:

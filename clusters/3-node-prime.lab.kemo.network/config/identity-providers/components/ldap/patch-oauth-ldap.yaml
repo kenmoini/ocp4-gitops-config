@@ -1,0 +1,24 @@
+
+- op: add
+  path: /spec/identityProviders/-
+  value:
+    ldap:
+      attributes:
+        email:
+          - mail
+        id:
+          - dn
+        name:
+          - cn
+        preferredUsername:
+          - uid
+      bindDN: "uid=admin,cn=users,cn=accounts,dc=kemo,dc=labs"
+      bindPassword:
+        name: ldap-bind-password
+      ca:
+        name: ldap-ca-cert
+      insecure: false
+      url: "ldaps://idm.kemo.labs:636"
+    mappingMethod: claim
+    name: LabDAP
+    type: LDAP

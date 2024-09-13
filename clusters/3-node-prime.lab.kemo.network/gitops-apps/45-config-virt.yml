@@ -14,14 +14,14 @@ spec:
   sources:
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: HEAD
-      path: clusters/mega-sno.v60.lab.kemo.network/config/virt/networking
+      path: clusters/3-node-prime.lab.kemo.network/config/virt/networking
       #directory:
       #  recurse: true
       kustomize:
         version: v5.1.0
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: HEAD
-      path: clusters/mega-sno.v60.lab.kemo.network/config/virt/migration-glue
+      path: clusters/3-node-prime.lab.kemo.network/config/virt/migration-glue
       kustomize:
         version: v5.1.0
   project: local-cluster
