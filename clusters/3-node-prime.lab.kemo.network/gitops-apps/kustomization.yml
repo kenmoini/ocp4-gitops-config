@@ -32,9 +32,9 @@ resources:
   #- 34-instance-sso.yml
   - 35-instance-nmstate.yml
 
-  #- 40-instance-ocp-virt.yml
-  #- 41-instance-mtv.yml
-  #- 45-config-virt.yml
+  - 40-instance-ocp-virt.yml
+  - 41-instance-mtv.yml
+  - 45-config-virt.yml
 
   #- 50-config-acm-mce-hcp.yml
 

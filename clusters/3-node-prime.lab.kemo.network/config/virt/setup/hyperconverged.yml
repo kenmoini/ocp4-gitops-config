@@ -1,0 +1,44 @@
+apiVersion: hco.kubevirt.io/v1beta1
+kind: HyperConverged
+metadata:
+  name: kubevirt-hyperconverged
+  annotations:
+    deployOVS: 'false'
+spec:
+  vddkInitImage: disconn-harbor.d70.kemo.labs/library/vddk:latest
+  liveMigrationConfig:
+    allowAutoConverge: false
+    allowPostCopy: true
+    completionTimeoutPerGiB: 800
+    parallelMigrationsPerCluster: 5
+    parallelOutboundMigrationsPerNode: 2
+    progressTimeout: 150
+  certConfig:
+    ca:
+      duration: 48h0m0s
+      renewBefore: 24h0m0s
+    server:
+      duration: 24h0m0s
+      renewBefore: 12h0m0s
+  featureGates:
+    deployKubeSecondaryDNS: false
+    deployTektonTaskResources: false
+    disableMDevConfiguration: false
+    enableCommonBootImageImport: true
+    nonRoot: true
+    withHostPassthroughCPU: true
+  workloadUpdateStrategy:
+    batchEvictionInterval: 1m0s
+    batchEvictionSize: 10
+    workloadUpdateMethods:
+      - LiveMigrate
+  uninstallStrategy: BlockUninstallIfWorkloadsExist
+  # Avoids OOMKilled on image importing: https://access.redhat.com/solutions/6988046
+  resourceRequirements:
+    storageWorkloads:
+      limits:
+        cpu: "500m"
+        memory: "2Gi"
+      requests:
+        cpu: "250m"
+        memory: "1Gi"

@@ -1,0 +1,72 @@
+---
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: vlan60-eno1
+spec:
+  nodeSelector: # make sure to set a selector - start with 1 host, then apply to more
+    #kubernetes.io/hostname: app-node-1.ocp.example.com
+    vlan60-eno1: "true"
+  desiredState:
+    interfaces:
+      - name: eno1.60
+        description: VLAN 60 using eno1
+        type: vlan
+        state: up
+        vlan:
+          base-iface: eno1
+          id: 60
+---
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: vlan60-eno1np0
+spec:
+  nodeSelector: # make sure to set a selector - start with 1 host, then apply to more
+    #kubernetes.io/hostname: app-node-1.ocp.example.com
+    vlan60-eno1np0: "true"
+  desiredState:
+    interfaces:
+      - name: eno1np0.60
+        description: VLAN 60 using eno1np0
+        type: vlan
+        state: up
+        vlan:
+          base-iface: eno1np0
+          id: 60
+---
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: vlan60-enp65s0f0
+spec:
+  nodeSelector: # make sure to set a selector - start with 1 host, then apply to more
+    #kubernetes.io/hostname: app-node-1.ocp.example.com
+    vlan60-enp65s0f0: "true"
+  desiredState:
+    interfaces:
+      - name: enp65s0f0.60
+        description: VLAN 60 using enp65s0f0
+        type: vlan
+        state: up
+        vlan:
+          base-iface: enp65s0f0
+          id: 60
+---
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: vlan60-bond0
+spec:
+  nodeSelector: # make sure to set a selector - start with 1 host, then apply to more
+    #kubernetes.io/hostname: app-node-1.ocp.example.com
+    vlan60-bond0: "true"
+  desiredState:
+    interfaces:
+      - name: bond0.60
+        description: VLAN 60 using bond0
+        type: vlan
+        state: up
+        vlan:
+          base-iface: bond0
+          id: 60
