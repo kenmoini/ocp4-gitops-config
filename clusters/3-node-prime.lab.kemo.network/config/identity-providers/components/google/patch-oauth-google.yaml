@@ -1,0 +1,12 @@
+
+- op: add
+  path: /spec/identityProviders/-
+  value:
+    name: RedHatSSO
+    type: Google
+    mappingMethod: claim
+    google:
+      clientID: "1005185173510-l99vvs6cdfhfbu84s4tck5tj6kalt8p5.apps.googleusercontent.com"
+      clientSecret: 
+        name: gcp-oauth-client-secret
+      hostedDomain: "redhat.com"
