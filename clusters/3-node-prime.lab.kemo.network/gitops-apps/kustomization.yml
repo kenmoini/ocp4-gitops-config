@@ -1,0 +1,55 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - 00-git-config-map.yml
+  - 00-additionaltrustbundle.yml
+  #- 00-etcd-defrag.yml
+  - 01-config-machineconfigs.yml
+  - 04-operator-external-secrets.yml
+  - 05-instance-external-secrets.yml
+  - 07-helm-democratic-csi.yml
+  #- 11-operator-pipelines.yml
+  - 12-operator-metallb.yml
+  - 13-operator-nfd.yml
+  - 14-operator-sso.yml
+  - 15-operator-aap2.yml
+  #- 16-operator-gitea.yml
+  - 17-operator-acm.yml
+  - 18-operator-mce.yml
+  #- 19-operator-quay.yml
+  #- 20-operator-external-dns.yml
+  - 21-operator-nmstate.yml
+  - 22-operator-mtv.yml
+  - 23-operator-openshift-virt.yml
+  
+  #- 30-instance-mce.yml
+  #- 31-instance-acm.yml
+  #- 32-instance-metallb.yml
+  #- 33-instance-nfd.yml
+  #- 34-instance-sso.yml
+  #- 35-instance-nmstate.yml
+
+  #- 40-instance-ocp-virt.yml
+  #- 41-instance-mtv.yml
+  #- 45-config-virt.yml
+
+  #- 50-config-acm-mce-hcp.yml
+
+  #- 60-instance-mco.yml
+
+  #- 100-ztp-sso.yml
+
+replacements:
+  - source:
+      kind: ConfigMap
+      name: git-config
+      fieldPath: data.repoBase
+    targets:
+      - select:
+          kind: Application
+          group: argoproj.io
+          labelSelector: has-git-repo-objects=true
+        fieldPaths:
+        - spec.sources.*.repoURL

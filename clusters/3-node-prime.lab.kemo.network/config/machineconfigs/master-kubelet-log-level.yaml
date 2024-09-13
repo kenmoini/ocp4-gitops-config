@@ -1,0 +1,19 @@
+apiVersion: machineconfiguration.openshift.io/v1
+kind: MachineConfig
+metadata:
+  labels:
+    machineconfiguration.openshift.io/role: master
+  name: 99-master-kubelet-loglevel
+spec:
+  config:
+    ignition:
+      version: 3.2.0
+    systemd:
+      units:
+        - name: kubelet.service
+          enabled: true
+          dropins:
+            - name: 30-logging.conf
+              contents: |
+                [Service]
+                Environment="KUBELET_LOG_LEVEL=1"
