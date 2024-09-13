@@ -9,4 +9,4 @@ components:
   - ../../components/red-matrix-login
   - ../../components/htpasswd
   - ../../components/ldap
-  - ../../components/googl
+  - ../../components/google
