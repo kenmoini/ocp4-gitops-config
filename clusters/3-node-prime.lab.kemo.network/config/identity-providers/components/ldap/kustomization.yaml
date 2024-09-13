@@ -7,6 +7,7 @@ namespace: openshift-config
 resources:
   - ca-cert-configmap.yaml
   - external-secret-bind-pass.yaml
+  - ldapsyncconfig.yaml
 
 patches:
   - path: patch-oauth-ldap.yaml
