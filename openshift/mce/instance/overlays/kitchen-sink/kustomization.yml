@@ -19,3 +19,4 @@ components:
   - ../../components/local-cluster
   - ../../components/managedserviceaccount
   - ../../components/server-foundation
+  - ../../components/image-based-install-operator-preview

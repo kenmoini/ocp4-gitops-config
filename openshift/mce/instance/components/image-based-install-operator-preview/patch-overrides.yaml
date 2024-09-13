@@ -1,0 +1,6 @@
+
+- op: add
+  path: /spec/overrides/components/-
+  value:
+    name: image-based-install-operator-preview
+    enabled: false
