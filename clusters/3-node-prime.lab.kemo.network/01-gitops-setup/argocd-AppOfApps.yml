@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
     targetRevision: HEAD
-    path: clusters/mega-sno.v60.lab.kemo.network/gitops-apps
+    path: clusters/3-node-prime.lab.kemo.network/gitops-apps
     #directory:
     #  recurse: true
     kustomize:
