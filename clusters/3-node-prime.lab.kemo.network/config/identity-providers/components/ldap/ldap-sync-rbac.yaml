@@ -1,0 +1,36 @@
+---
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: ldap-group-syncer
+  namespace: openshift-config
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: ldap-group-syncer
+  namespace: openshift-config
+rules:
+  - apiGroups:
+      - ''
+      - user.openshift.io
+    resources:
+      - groups
+    verbs:
+      - get
+      - list
+      - create
+      - update
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: ldap-group-syncer
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: ldap-group-syncer
+subjects:
+  - kind: ServiceAccount
+    name: ldap-group-syncer
+    namespace: openshift-config

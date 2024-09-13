@@ -1,0 +1,38 @@
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: ldap-group-syncer
+  namespace: openshift-config
+data:
+  sync.yaml: |
+    kind: LDAPSyncConfig
+    apiVersion: v1
+    url: "ldaps://idm.kemo.labs:636"
+    insecure: false
+    bindDN: "uid=admin,cn=users,cn=accounts,dc=kemo,dc=labs"
+    bindPassword: 
+      file: "/etc/secrets/bindPassword"
+    ca: /etc/ldap-ca/ca.crt
+    groupUIDNameMapping:
+      "cn=labadmins,cn=groups,cn=accounts,dc=kemo,dc=labs": labadmins
+      "cn=admins,cn=groups,cn=accounts,dc=kemo,dc=labs": admins
+    rfc2307:
+      groupsQuery:
+        baseDN: "cn=groups,cn=accounts,dc=kemo,dc=labs"
+        scope: sub
+        derefAliases: never
+        pageSize: 0
+        filter: "(|(cn=labadmins)(cn=admins))"
+      groupUIDAttribute: dn 
+      groupNameAttributes: [ cn ] 
+      groupMembershipAttributes: [ member ]
+      usersQuery:
+        baseDN: "cn=users,cn=accounts,dc=kemo,dc=labs"
+        scope: sub
+        derefAliases: never
+        pageSize: 0
+      userUIDAttribute: dn
+      userNameAttributes: [ uid ]
+      tolerateMemberNotFoundErrors: true
+      tolerateMemberOutOfScopeErrors: true
