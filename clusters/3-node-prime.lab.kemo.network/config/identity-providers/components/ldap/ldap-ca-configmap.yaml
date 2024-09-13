@@ -4,7 +4,8 @@ kind: ConfigMap
 metadata:
   name: "ldap-ca"
   namespace: openshift-config
-type: kubernetes.io/tls
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 data:
   "ca.crt": |
     -----BEGIN CERTIFICATE-----

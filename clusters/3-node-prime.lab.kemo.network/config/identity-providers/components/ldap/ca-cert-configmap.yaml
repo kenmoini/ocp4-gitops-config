@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   name: "ldap-ca-cert"
   namespace: openshift-config
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 data:
   "ca.crt": |
     -----BEGIN CERTIFICATE-----

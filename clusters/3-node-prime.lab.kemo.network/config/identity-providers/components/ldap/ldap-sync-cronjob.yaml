@@ -4,6 +4,8 @@ apiVersion: batch/v1
 metadata:
   name: ldap-group-syncer
   namespace: openshift-config
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
 spec:
   schedule: "*/15 * * * *"
   concurrencyPolicy: Forbid
@@ -26,7 +28,7 @@ spec:
                 - mountPath: "/etc/secrets"
                   name: "ldap-bind-password"
                 - mountPath: "/etc/ldap-ca"
-                  name: "ldap-ca"
+                  name: "ldap-ca-cert"
           volumes:
             - name: "ldap-sync-volume"
               configMap:
@@ -34,9 +36,9 @@ spec:
             - name: "ldap-bind-password"
               secret:
                 secretName: "ldap-bind-password"
-            - name: "ldap-ca"
+            - name: "ldap-ca-cert"
               configMap:
-                name: "ldap-ca"
+                name: "ldap-ca-cert"
           restartPolicy: "Never"
           terminationGracePeriodSeconds: 30
           activeDeadlineSeconds: 500

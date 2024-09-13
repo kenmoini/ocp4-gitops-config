@@ -10,7 +10,7 @@ resources:
   - ldap-sync-config.yaml
   - ldap-sync-cronjob.yaml
   - ldap-sync-rbac.yaml
-  - ldap-ca-configmap.yaml
+  #- ldap-ca-configmap.yaml
 
 patches:
   - path: patch-oauth-ldap.yaml

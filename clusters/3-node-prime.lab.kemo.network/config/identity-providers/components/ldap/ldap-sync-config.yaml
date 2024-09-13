@@ -4,6 +4,8 @@ apiVersion: v1
 metadata:
   name: ldap-group-syncer
   namespace: openshift-config
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 data:
   sync.yaml: |
     kind: LDAPSyncConfig
