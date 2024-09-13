@@ -1,0 +1,66 @@
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: rhatter-cluster-admins
+subjects:
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: kmoini@redhat.com
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: mtipton@redhat.com
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: tsikes@redhat.com
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: takinosh@redhat.com
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: ajhajj@redhat.com
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: msolberg@redhat.com
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: gfontana@redhat.com
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: gfontana@redhat.com
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: jedavis@redhat.com
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: jnovotni@redhat.com
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: jobrowni@redhat.com
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: jflorist@redhat.com
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: lnichols@redhat.com
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: sgurijal@redhat.com
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: thegador@redhat.com
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: vtsugran@redhat.com
+
+  - kind: Group
+    apiGroup: rbac.authorization.k8s.io
+    name: admins
+  - kind: Group
+    apiGroup: rbac.authorization.k8s.io
+    name: labadmins
+
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
