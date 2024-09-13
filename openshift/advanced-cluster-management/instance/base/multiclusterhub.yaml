@@ -36,7 +36,7 @@ spec:
         name: search
       - enabled: true
         name: submariner-addon
-      #- enabled: true
-      #  name: volsync
-      #- enabled: true
-      #  name: cluster-backup
+      - enabled: false
+        name: volsync
+      - enabled: false
+        name: cluster-backup
