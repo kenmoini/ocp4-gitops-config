@@ -24,6 +24,11 @@ spec:
       path: clusters/3-node-prime.lab.kemo.network/config/virt/migration-glue
       kustomize:
         version: v5.1.0
+    - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
+      targetRevision: HEAD
+      path: clusters/3-node-prime.lab.kemo.network/config/virt/pipelines
+      kustomize:
+        version: v5.1.0
   project: local-cluster
   syncPolicy:
     automated:
