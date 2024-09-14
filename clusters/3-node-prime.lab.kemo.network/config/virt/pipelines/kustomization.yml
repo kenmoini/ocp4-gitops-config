@@ -9,7 +9,7 @@ resources:
   - https://raw.githubusercontent.com/openshift-pipelines/tektoncd-catalog/p/tasks/create-vm-from-manifest/4.16.2/create-vm-from-manifest.yaml
   - https://raw.githubusercontent.com/openshift-pipelines/tektoncd-catalog/p/tasks/create-vm-from-template/4.16.2/create-vm-from-template.yaml
   - https://raw.githubusercontent.com/openshift-pipelines/tektoncd-catalog/p/tasks/disk-virt-customize/4.16.2/disk-virt-customize.yaml
-  - https://raw.githubusercontent.com/openshift-pipelines/tektoncd-catalog/p/disk-virt-sysprep/TEST/4.16.2/disk-virt-sysprep.yaml
+  - https://raw.githubusercontent.com/openshift-pipelines/tektoncd-catalog/p/tasks/disk-virt-sysprep/4.16.2/disk-virt-sysprep.yaml
   - https://raw.githubusercontent.com/openshift-pipelines/tektoncd-catalog/p/tasks/modify-data-object/4.16.2/modify-data-object.yaml
   - https://raw.githubusercontent.com/openshift-pipelines/tektoncd-catalog/p/tasks/modify-vm-template/4.16.2/modify-vm-template.yaml
   - https://raw.githubusercontent.com/openshift-pipelines/tektoncd-catalog/p/tasks/modify-windows-iso-file/4.16.2/modify-windows-iso-file.yaml
