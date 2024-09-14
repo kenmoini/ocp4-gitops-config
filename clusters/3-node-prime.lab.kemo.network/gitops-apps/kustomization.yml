@@ -24,6 +24,7 @@ resources:
   - 21-operator-nmstate.yml
   - 22-operator-mtv.yml
   - 23-operator-openshift-virt.yml
+  - 24-operator-nvidia-gpu.yml
   
   - 30-instance-mce.yml
   - 31-instance-acm.yml
