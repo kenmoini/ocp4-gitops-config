@@ -32,6 +32,7 @@ resources:
   - 33-instance-nfd.yml
   #- 34-instance-sso.yml
   - 35-instance-nmstate.yml
+  - 36-instance-nvidia-gpu.yml
 
   - 40-instance-ocp-virt.yml
   - 41-instance-mtv.yml
