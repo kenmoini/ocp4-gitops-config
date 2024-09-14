@@ -15,4 +15,4 @@ resources:
   - https://raw.githubusercontent.com/openshift-pipelines/tektoncd-catalog/p/tasks/modify-windows-iso-file/4.16.2/modify-windows-iso-file.yaml
   - https://raw.githubusercontent.com/openshift-pipelines/tektoncd-catalog/p/tasks/wait-for-vmi-status/4.16.2/wait-for-vmi-status.yaml
 
-  - https://raw.githubusercontent.com/openshift-pipelines/tektoncd-catalog/p/tasks/windows-efi-installer/4.16.2/windows-efi-installer.yaml
+  - https://raw.githubusercontent.com/openshift-pipelines/tektoncd-catalog/p/pipelines/windows-efi-installer/4.16.2/windows-efi-installer.yaml
