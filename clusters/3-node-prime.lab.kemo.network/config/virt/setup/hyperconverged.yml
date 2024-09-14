@@ -22,7 +22,7 @@ spec:
       renewBefore: 12h0m0s
   featureGates:
     deployKubeSecondaryDNS: false
-    deployTektonTaskResources: false
+    deployTektonTaskResources: true
     disableMDevConfiguration: false
     enableCommonBootImageImport: true
     nonRoot: true
