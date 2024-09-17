@@ -4,3 +4,21 @@ metadata:
   name: gitops-admins
 users:
   - kemo
+  - kmoini@redhat.com
+  - kube:admin
+  - system:admin
+  - mtipton@redhat.com
+  - tsikes@redhat.com
+  - takinosh@redhat.com
+  - ajhajj@redhat.com
+  - msolberg@redhat.com
+  - gfontana@redhat.com
+  - gfontana@redhat.com
+  - jedavis@redhat.com
+  - jnovotni@redhat.com
+  - jobrowni@redhat.com
+  - jflorist@redhat.com
+  - lnichols@redhat.com
+  - sgurijal@redhat.com
+  - thegador@redhat.com
+  - vtsugran@redhat.com
