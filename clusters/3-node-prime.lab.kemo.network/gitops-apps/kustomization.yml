@@ -28,7 +28,7 @@ resources:
   
   - 30-instance-mce.yml
   - 31-instance-acm.yml
-  #- 32-instance-metallb.yml
+  - 32-instance-metallb.yml
   - 33-instance-nfd.yml
   #- 34-instance-sso.yml
   - 35-instance-nmstate.yml
