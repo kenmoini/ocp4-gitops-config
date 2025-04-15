@@ -4,4 +4,4 @@ kind: Kustomization
 
 resources:
   - install.yaml
-  - external-secret.yaml
+  #- external-secret.yaml
