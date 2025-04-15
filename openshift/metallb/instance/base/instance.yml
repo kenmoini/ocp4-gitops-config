@@ -8,3 +8,5 @@ metadata:
   namespace: metallb-system
   annotations:
     argocd.argoproj.io/sync-wave: "10"
+spec:
+  bgpBackend: frr
