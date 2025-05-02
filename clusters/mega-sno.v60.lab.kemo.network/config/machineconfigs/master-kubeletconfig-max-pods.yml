@@ -6,8 +6,10 @@ spec:
   autoSizingReserved: true
   kubeletConfig:
     podsPerCore: 0
-    maxPods: 500
+    maxPods: 1000
     containerLogMaxSize: 5Mi
+    cpuManagerPolicy: static
+    cpuManagerReconcilePeriod: 15s
     #eventRecordQPS: 1000
     #kubeAPIQPS: 1000
     #kubeAPIBurst: 1000
