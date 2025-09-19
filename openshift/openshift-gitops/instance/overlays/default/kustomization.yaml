@@ -8,6 +8,7 @@ resources:
 
 components:
   - ../../components/annotation-resource-tracking
+  - ../../components/application-controller-cluster-admin
   - ../../components/cluster-ca-certs
   - ../../components/edge-termination
   - ../../components/enable-notifications
