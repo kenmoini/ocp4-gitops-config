@@ -10,6 +10,11 @@
           hs.message = "Policy Applied Successfully"
           return hs
       end
+      if obj.status ~= nil and obj.status.placement ~= nil then
+          hs.status = "Healthy"
+          hs.message = "Policy Applied Successfully"
+          return hs
+      end
       hs.status = "Progressing"
       hs.message = "Waiting for Policy to apply."
       return hs
