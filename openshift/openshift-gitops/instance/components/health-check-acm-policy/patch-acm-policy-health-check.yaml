@@ -15,7 +15,7 @@
           hs.message = "Policy Applied with Placements Successfully"
           return hs
       end
-      if obj.status ~= nil
+      if obj.status ~= nil then
           hs.status = "Healthy"
           hs.message = "Policy Applied Successfully"
           return hs
