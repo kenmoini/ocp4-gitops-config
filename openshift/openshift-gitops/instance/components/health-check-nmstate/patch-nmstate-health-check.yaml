@@ -1,0 +1,19 @@
+- op: add
+  path: /spec/resourceHealthChecks/-
+  value:
+    group: nmstate.io
+    kind: NodeNetworkConfigurationPolicy
+    check: |
+      hs = {}
+      if obj.status ~= nil and obj.status.conditions ~= nil then
+          for i, condition in ipairs(obj.status.conditions) do
+            if condition.status == "True" and condition.reason == "SuccessfullyConfigured" and condition.type == "Available" then
+                hs.status = "Healthy"
+                hs.message = "Interface Applied Successfully"
+                return hs
+            end
+          end
+      end
+      hs.status = "Progressing"
+      hs.message = "Waiting for interface to apply..."
+      return hs
