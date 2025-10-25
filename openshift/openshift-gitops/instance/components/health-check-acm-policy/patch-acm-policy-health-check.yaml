@@ -13,3 +13,19 @@
       hs.status = "Progressing"
       hs.message = "Waiting for Policy to apply."
       return hs
+
+- op: add
+  path: /spec/resourceHealthChecks/-
+  value:
+    group: policy.open-cluster-management.io
+    kind: ConfigurationPolicy
+    check: |
+      hs = {}
+      if obj.status ~= nil and obj.status.compliant ~= nil then
+          hs.status = "Healthy"
+          hs.message = "ConfigurationPolicy Applied Successfully"
+          return hs
+      end
+      hs.status = "Progressing"
+      hs.message = "Waiting for ConfigurationPolicy to apply."
+      return hs
