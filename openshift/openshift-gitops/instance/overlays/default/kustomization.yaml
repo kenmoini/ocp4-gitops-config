@@ -16,6 +16,7 @@ components:
   - ../../components/gitops-admins
   - ../../components/health-check-acs-central
   - ../../components/health-check-argocd
+  - ../../components/health-check-acm-policy
   - ../../components/health-check-odf
   - ../../components/health-check-olm
   - ../../components/health-check-openshift-builds
