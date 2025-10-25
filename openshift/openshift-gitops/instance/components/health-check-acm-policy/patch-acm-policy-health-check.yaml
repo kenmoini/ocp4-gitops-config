@@ -7,10 +7,15 @@
       hs = {}
       if obj.status ~= nil and obj.status.compliant ~= nil then
           hs.status = "Healthy"
-          hs.message = "Policy Applied Successfully"
+          hs.message = "Policy Compliance Target Applied Successfully"
           return hs
       end
       if obj.status ~= nil and obj.status.placement ~= nil then
+          hs.status = "Healthy"
+          hs.message = "Policy Applied with Placements Successfully"
+          return hs
+      end
+      if obj.status ~= nil
           hs.status = "Healthy"
           hs.message = "Policy Applied Successfully"
           return hs
