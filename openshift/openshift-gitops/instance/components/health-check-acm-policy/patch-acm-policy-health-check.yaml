@@ -1,0 +1,15 @@
+- op: add
+  path: /spec/resourceHealthChecks/-
+  value:
+    group: policy.open-cluster-management.io
+    kind: Policy
+    check: |
+      hs = {}
+      if obj.status ~= nil and obj.status.compliant ~= nil then
+          hs.status = "Healthy"
+          hs.message = "Policy Applied Successfully"
+          return hs
+      end
+      hs.status = "Progressing"
+      hs.message = "Waiting for Policy to apply."
+      return hs
