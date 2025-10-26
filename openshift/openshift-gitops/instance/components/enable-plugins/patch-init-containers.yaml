@@ -10,7 +10,7 @@ spec:
     initContainers:
     - args:
       - -c
-      - cp /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator/PolicyGenerator
+      - cp -vf /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator/PolicyGenerator
         /policy-generator/PolicyGenerator
       command:
       - /bin/bash
