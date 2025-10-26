@@ -16,8 +16,12 @@ components:
   - ../../components/gitops-admins
   - ../../components/health-check-acs-central
   - ../../components/health-check-argocd
+  - ../../components/health-check-acm-policy
+  - ../../components/health-check-externalsecret
+  - ../../components/health-check-nmstate
   - ../../components/health-check-odf
   - ../../components/health-check-olm
   - ../../components/health-check-openshift-builds
   - ../../components/outbound-proxy
+  - ../../components/sync-wave-wait
 
