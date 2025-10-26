@@ -10,13 +10,12 @@ spec:
     initContainers:
     - args:
       - -c
-      #- cp /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator/PolicyGenerator /policy-generator/PolicyGenerator
-      - cp -v /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator/PolicyGenerator-not-fips-compliant /policy-generator/PolicyGenerator
+      - cp -v /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator/PolicyGenerator /policy-generator/PolicyGenerator
       command:
       - /bin/bash
-      #image: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel8:v2.9
+      image: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel8:v2.9
       # GitOps Repo Server image is based on RHEL8 and doesn't have the GLIBC libraries needed by policygenerator plugin :(
-      image: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel9:v2.13
+      #image: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel9:v2.13
       name: policy-generator-install
       resources: {}
       volumeMounts:
