@@ -10,16 +10,37 @@ spec:
     initContainers:
     - args:
       - -c
-      #- curl https://github.com/open-cluster-management-io/policy-generator-plugin/releases/download/v1.16.0/linux-amd64-PolicyGenerator -O /policy-generator/PolicyGenerator
-      #- cp -v /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator/PolicyGenerator /policy-generator/PolicyGenerator
-      - cp -v /policy-generator/PolicyGenerator-rhel8 /policy-generator-tmp/PolicyGenerator
+      - cp /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator/PolicyGenerator
+        /policy-generator/PolicyGenerator
       command:
       - /bin/bash
-      #image: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel8:v2.8
-      # GitOps Repo Server image is based on RHEL8 and doesn't have the GLIBC libraries needed by policygenerator plugin :(
-      image: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel9:v2.13
+      #image: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel8:v<version>
+      image: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel8:v2.8
       name: policy-generator-install
-      resources: {}
       volumeMounts:
-      - mountPath: /policy-generator-tmp
+      - mountPath: /policy-generator
         name: policy-generator
+# kind: ArgoCD
+# apiVersion: argoproj.io/v1beta1
+# metadata:
+#   name: openshift-gitops
+#   namespace: openshift-gitops
+# spec:
+#   repo:
+#     # Before the repo container starts, copy the PolicyGenerator binary into the ArgoCD container via the emptyDir Volume
+#     initContainers:
+#     - args:
+#       - -c
+#       #- curl https://github.com/open-cluster-management-io/policy-generator-plugin/releases/download/v1.16.0/linux-amd64-PolicyGenerator -O /policy-generator/PolicyGenerator
+#       #- cp -v /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator/PolicyGenerator /policy-generator/PolicyGenerator
+#       - cp -v /policy-generator/PolicyGenerator-rhel8 /policy-generator-tmp/PolicyGenerator
+#       command:
+#       - /bin/bash
+#       #image: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel8:v2.8
+#       # GitOps Repo Server image is based on RHEL8 and doesn't have the GLIBC libraries needed by policygenerator plugin :(
+#       image: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel9:v2.13
+#       name: policy-generator-install
+#       resources: {}
+#       volumeMounts:
+#       - mountPath: /policy-generator-tmp
+#         name: policy-generator
