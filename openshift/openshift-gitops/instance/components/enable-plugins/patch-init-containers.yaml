@@ -10,7 +10,9 @@ spec:
     initContainers:
     - args:
       - -c
-      - cp -v /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator/PolicyGenerator /policy-generator/PolicyGenerator
+      #- curl https://github.com/open-cluster-management-io/policy-generator-plugin/releases/download/v1.16.0/linux-amd64-PolicyGenerator -O /policy-generator/PolicyGenerator
+      #- cp -v /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator/PolicyGenerator /policy-generator/PolicyGenerator
+      - cp -v /policy-generator/PolicyGenerator-rhel8 /policy-generator-tmp/PolicyGenerator
       command:
       - /bin/bash
       image: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel8:v2.8
@@ -19,5 +21,5 @@ spec:
       name: policy-generator-install
       resources: {}
       volumeMounts:
-      - mountPath: /policy-generator
+      - mountPath: /policy-generator-tmp
         name: policy-generator
