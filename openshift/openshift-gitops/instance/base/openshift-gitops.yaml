@@ -6,6 +6,7 @@ spec:
   extraConfig:
     resource.compareoptions: |
       ignoreResourceStatusField: crd
+      ignoreAggregatedRoles: true
   resourceHealthChecks: []
   tls:
     ca: {}
