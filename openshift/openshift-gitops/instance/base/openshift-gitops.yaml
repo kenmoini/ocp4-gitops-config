@@ -3,6 +3,9 @@ kind: ArgoCD
 metadata:
   name: openshift-gitops
 spec:
+  extraConfig:
+    resource.compareoptions: |
+      ignoreResourceStatusField: crd
   resourceHealthChecks: []
   tls:
     ca: {}
