@@ -7,3 +7,4 @@ spec:
     policy: |-
       g, system:cluster-admins, role:admin
       g, gitops-admins, role:admin
+      g, lab-gitops-admins, role:admin
