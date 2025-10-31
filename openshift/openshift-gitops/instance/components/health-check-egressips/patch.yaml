@@ -1,0 +1,17 @@
+- op: add
+  path: /spec/resourceHealthChecks/-
+  value:
+    group: k8s.ovn.org
+    kind: EgressIP
+    check: |
+      hs = {}
+      if obj.status ~= nil then
+        if obj.status.items ~= nil then
+            hs.status = "Healthy"
+            hs.message = obj.status.phase
+            return hs
+        end
+      end
+      hs.status = "Progressing"
+      hs.message = "Waiting for EgressIP to sync and attach"
+      return hs
