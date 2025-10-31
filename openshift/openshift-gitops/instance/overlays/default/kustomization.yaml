@@ -17,6 +17,7 @@ components:
   - ../../components/health-check-acs-central
   - ../../components/health-check-argocd
   - ../../components/health-check-acm-policy
+  - ../../components/health-check-egressips
   - ../../components/health-check-externalsecret
   - ../../components/health-check-nmstate
   - ../../components/health-check-odf
