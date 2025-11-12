@@ -21,8 +21,8 @@ spec:
       enabled: false
     resources:
       limits:
-        cpu: 500m
-        memory: 512Mi
+        cpu: '1'
+        memory: 1Gi
       requests:
         cpu: 125m
         memory: 128Mi
@@ -77,8 +77,8 @@ spec:
         cpu: '4'
         memory: 4Gi
       requests:
-        cpu: 250m
-        memory: 512Mi
+        cpu: '1'
+        memory: 1Gi
     webhookServer:
       ingress:
         enabled: false
@@ -136,7 +136,7 @@ spec:
     resources:
       limits:
         cpu: '4'
-        memory: 4Gi
+        memory: 8Gi
       requests:
         cpu: 250m
-        memory: 1Gi
+        memory: 2Gi
