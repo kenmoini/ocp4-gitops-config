@@ -11,6 +11,7 @@ components:
   - ../../components/application-controller-cluster-admin
   - ../../components/cluster-ca-certs
   - ../../components/edge-termination
+  - ../../components/enable-badges
   - ../../components/enable-notifications
   - ../../components/enable-plugins
   - ../../components/gitops-admins
