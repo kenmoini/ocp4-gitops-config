@@ -28,5 +28,9 @@
             return hs
           end
         end
+        if obj.status.tags == nil then
+          hs.status = "Healthy"
+          hs.message = "ImageStream is empty"
+        end
       end
       return hs
