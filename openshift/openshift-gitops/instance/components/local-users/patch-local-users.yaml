@@ -7,5 +7,5 @@ spec:
     - name: rhdh
       enabled: true
       login: false
-      tokenLifetime: 0
+      tokenLifetime: '0'
       apiKey: true
