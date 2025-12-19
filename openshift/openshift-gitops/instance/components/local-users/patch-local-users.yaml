@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1beta1
+kind: ArgoCD
+metadata:
+  name: openshift-gitops
+spec:
+  localUsers:
+    - name: rhdh
+      enabled: true
+      login: false
+      tokenLifetime: 0
+      apiKey: true
