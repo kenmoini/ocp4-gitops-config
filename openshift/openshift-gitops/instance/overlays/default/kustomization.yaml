@@ -24,4 +24,5 @@ components:
   - ../../components/health-check-odf
   - ../../components/health-check-olm
   - ../../components/health-check-openshift-builds
+  - ../../components/local-users
   - ../../components/sync-wave-wait
