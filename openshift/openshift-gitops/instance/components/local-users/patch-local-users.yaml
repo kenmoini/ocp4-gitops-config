@@ -6,6 +6,6 @@ spec:
   localUsers:
     - name: rhdh
       enabled: true
-      login: false
+      #login: false
       tokenLifetime: '0'
       apiKey: true
