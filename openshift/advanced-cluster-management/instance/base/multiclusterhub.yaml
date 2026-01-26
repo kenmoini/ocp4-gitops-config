@@ -62,7 +62,7 @@ spec:
         configOverrides: {}
         enabled: false
         
-      - name: edge-manager-preview
+      - name: edge-manager
         configOverrides: {}
         enabled: false
         
