@@ -62,19 +62,19 @@ spec:
         configOverrides: {}
         enabled: false
         
-      - name: edge-manager
-        configOverrides: {}
-        enabled: false
+      # - name: edge-manager
+      #   configOverrides: {}
+      #   enabled: false
         
-      - name: fine-grained-rbac-preview
-        configOverrides: {}
-        enabled: false
+      # - name: fine-grained-rbac-preview
+      #   configOverrides: {}
+      #   enabled: false
         
       - name: siteconfig
         configOverrides: {}
         enabled: false
         
-      - configOverrides: {}	
-        enabled: false	
-        name: cnv-mtv-integrations-preview
+      # - configOverrides: {}	
+      #   enabled: false	
+      #   name: cnv-mtv-integrations-preview
 
