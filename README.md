@@ -1,5 +1,7 @@
 # OpenShift 4 GitOps Configuration
 
+> Note: This repo relies heavily on ArgoCD GitOps for distribution of configuration/workloads, and it's my personal opinion that ArogCD doesn't scale well and trips over itself from time to time.  I've sinced moved to a different repo for GitOps-driven cluster setup [kenmoini/lab-ocp](https://github.com/kenmoini/lab-ocp) that uses ACM Policies for distribution.
+
 This repository has a set of GitOps-based assets for managing clusters.
 
 ## Included Assets
