@@ -15,8 +15,7 @@ spec:
     path: clusters/suki-sno.v60.lab.kemo.network/10-gitops-apps
     #directory:
     #  recurse: true
-    kustomize:
-      version: v5.1.0
+    kustomize: {}
   project: local-cluster
   syncPolicy:
     automated:

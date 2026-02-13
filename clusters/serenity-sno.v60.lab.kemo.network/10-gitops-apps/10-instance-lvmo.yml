@@ -17,8 +17,7 @@ spec:
       path: clusters/serenity-sno.v60.lab.kemo.network/20-config/lvmo/
       #directory:
       #  recurse: true
-      kustomize:
-        version: v5.1.0
+      kustomize: {}
   project: local-cluster
   syncPolicy:
     automated:

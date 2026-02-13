@@ -17,8 +17,7 @@ spec:
       path: clusters/mega-sno.v60.lab.kemo.network/config/machineconfigs/
       #directory:
       #  recurse: true
-      kustomize:
-        version: v5.1.0
+      kustomize: {}
     #- repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
     #  targetRevision: HEAD
     #  path: openshift/hacks/sleep-post-sync/

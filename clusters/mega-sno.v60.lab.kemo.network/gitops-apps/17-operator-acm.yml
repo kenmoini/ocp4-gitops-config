@@ -17,8 +17,7 @@ spec:
       path: openshift/advanced-cluster-management/operator/overlays/release-2.11/
       #directory:
       #  recurse: true
-      kustomize:
-        version: v5.1.0
+      kustomize: {}
   project: local-cluster
   syncPolicy:
     automated:

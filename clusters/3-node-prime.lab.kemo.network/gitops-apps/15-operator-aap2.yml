@@ -17,8 +17,7 @@ spec:
       path: openshift/ansible-automation-platform/operator/overlays/stable-2.4-cluster-scoped
       #directory:
       #  recurse: true
-      kustomize:
-        version: v5.1.0
+      kustomize: {}
   project: local-cluster
   syncPolicy:
     automated:

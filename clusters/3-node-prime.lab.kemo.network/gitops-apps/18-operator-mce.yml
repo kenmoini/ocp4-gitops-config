@@ -16,9 +16,8 @@ spec:
       targetRevision: main
       path: openshift/mce/operator/overlays/stable-2.6/
       #directory:
-      #  recurse: true
-      kustomize:
-        version: v5.1.0
+      #  recurse: true 
+      kustomize: {}
   project: local-cluster
   syncPolicy:
     automated:

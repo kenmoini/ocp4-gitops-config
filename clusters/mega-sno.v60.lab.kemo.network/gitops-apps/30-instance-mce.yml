@@ -22,8 +22,7 @@ spec:
       path: openshift/mce/instance/overlays/kitchen-sink/
       #directory:
       #  recurse: true
-      kustomize:
-        version: v5.1.0
+      kustomize: {}
   project: local-cluster
   syncPolicy:
     syncOptions:

@@ -17,8 +17,7 @@ spec:
       path: clusters/3-node-prime.lab.kemo.network/config/acm-mce-hcp/
       #directory:
       #  recurse: true
-      kustomize:
-        version: v5.1.0
+      kustomize: {}
   project: local-cluster
   syncPolicy:
     automated:

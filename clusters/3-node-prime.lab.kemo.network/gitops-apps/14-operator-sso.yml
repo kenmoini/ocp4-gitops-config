@@ -17,8 +17,7 @@ spec:
       path: openshift/rhsso/operator/overlays/stable/
       #directory:
       #  recurse: true
-      kustomize:
-        version: v5.1.0
+      kustomize: {}
   project: local-cluster
   syncPolicy:
     automated:

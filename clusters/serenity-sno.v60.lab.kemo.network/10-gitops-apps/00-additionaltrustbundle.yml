@@ -17,15 +17,13 @@ spec:
       path: clusters/serenity-sno.v60.lab.kemo.network/20-config/proxy-config/overlays/additional-trust-bundle/
       #directory:
       #  recurse: true
-      kustomize:
-        version: v5.1.0
+      kustomize: {}
     - repoURL: 'https://github.com/kenmoini/ocp4-gitops-config'
       targetRevision: main
       path: clusters/serenity-sno.v60.lab.kemo.network/20-config/image-config/overlays/additional-trust-bundle/
       #directory:
       #  recurse: true
-      kustomize:
-        version: v5.1.0
+      kustomize: {}
   project: local-cluster
   syncPolicy:
     automated:

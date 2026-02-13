@@ -17,8 +17,7 @@ spec:
       path: clusters/mega-sno.v60.lab.kemo.network/config/virt/setup
       #directory:
       #  recurse: true
-      kustomize:
-        version: v5.1.0
+      kustomize: {}
   project: local-cluster
   syncPolicy:
     automated:
